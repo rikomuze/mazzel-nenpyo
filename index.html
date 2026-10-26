@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>MAZZEL 年表</title>
+<meta name="description" content="MAZZELの出演・ライブ・リリースなどを年・月ごとにたどれる非公式ファン年表。">
+<meta property="og:title" content="MAZZEL 年表">
+<meta property="og:description" content="MAZZELの出演・ライブ・リリースなどを年・月ごとにたどれる非公式ファン年表。">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
+
+/* Layout: one reading column; big year numerals mark eras, a sticky filter bar, dated rows with kind chips. */
+:root{
+  --bg:#F3F4F7;--surface:#FFFFFF;--ink:#15161D;--muted:#5B5F6E;--faint:#8A8E9C;--line:#DCDFE6;
+  --accent:#3646D8;--accent-ink:#FFFFFF;--accent-soft:#E6E8FB;--danger:#C2283B;
+  --k-live-bg:#FCE4EE;--k-live:#A3134E;--k-tv-bg:#E9EBF0;--k-tv:#3F4454;--k-rel-bg:#FDEBD9;--k-rel:#9A4A06;
+  --k-mv-bg:#F0E6DD;--k-mv:#7A4A2A;--k-stream-bg:#DFF3E6;--k-stream:#1D6B3C;--k-mag-bg:#FBE3E1;--k-mag:#A82A22;
+  --k-sns-bg:#EEE5FA;--k-sns:#6233A8;--k-etc-bg:#EDEEF1;--k-etc:#5B5F6E;--k-none-bg:transparent;--k-none:#8A8E9C;
+  --f-display:"Unbounded","Zen Kaku Gothic New",system-ui,sans-serif;
+  --f-body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0E0F14;--surface:#171922;--ink:#ECEDF3;--muted:#A0A4B3;--faint:#6F7383;--line:#2A2D3A;
+  --accent:#8E98FF;--accent-ink:#0E0F14;--accent-soft:#232744;--danger:#FF6B7D;
+  --k-live-bg:#3A1426;--k-live:#FF8DB8;--k-tv-bg:#252834;--k-tv:#C3C7D4;--k-rel-bg:#3A2610;--k-rel:#FFB36B;
+  --k-mv-bg:#33261C;--k-mv:#E2B08A;--k-stream-bg:#13301F;--k-stream:#7FDDA2;--k-mag-bg:#3A1714;--k-mag:#FF968C;
+  --k-sns-bg:#2A1D42;--k-sns:#C5A3FF;--k-etc-bg:#23252E;--k-etc:#A0A4B3;--k-none:#6F7383;
+  color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0E0F14;--surface:#171922;--ink:#ECEDF3;--muted:#A0A4B3;--faint:#6F7383;--line:#2A2D3A;
+  --accent:#8E98FF;--accent-ink:#0E0F14;--accent-soft:#232744;--danger:#FF6B7D;
+  --k-live-bg:#3A1426;--k-live:#FF8DB8;--k-tv-bg:#252834;--k-tv:#C3C7D4;--k-rel-bg:#3A2610;--k-rel:#FFB36B;
+  --k-mv-bg:#33261C;--k-mv:#E2B08A;--k-stream-bg:#13301F;--k-stream:#7FDDA2;--k-mag-bg:#3A1714;--k-mag:#FF968C;
+  --k-sns-bg:#2A1D42;--k-sns:#C5A3FF;--k-etc-bg:#23252E;--k-etc:#A0A4B3;--k-none:#6F7383;
+  color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:860px;margin:0 auto}
+button,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* header */
+.head{padding-block:40px 20px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between}
+.mark{font-family:var(--f-display);font-weight:700;font-size:clamp(40px,9vw,76px);line-height:.95;letter-spacing:-.02em;margin:0;text-wrap:balance}
+.mark small{display:block;font-family:var(--f-body);font-weight:700;font-size:.34em;letter-spacing:.18em;margin-top:.45em;color:var(--muted)}
+.meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.meta b{display:block;font-family:var(--f-mono);font-weight:500;font-size:20px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
+.editbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer}
+.editbtn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+
+/* toolbar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:grid;gap:10px}
+.row1{display:flex;gap:8px;align-items:center}
+.search{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font-size:15px}
+.order{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font-size:13px;white-space:nowrap;cursor:pointer}
+.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.chips::-webkit-scrollbar{display:none}
+.fchip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.fchip .n{font-family:var(--f-mono);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
+.fchip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.fchip[aria-pressed="true"] .n{color:inherit;opacity:.7}
+.years{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.years::-webkit-scrollbar{display:none}
+.ylink{flex:none;border:0;background:none;padding:2px 8px;font-family:var(--f-display);font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-radius:6px}
+.ylink:hover{color:var(--ink);background:var(--accent-soft)}
+.ylink.today{color:var(--accent)}
+
+/* timeline */
+.year{scroll-margin-top:var(--barh,150px);padding-top:36px}
+.yhead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:6px}
+.ynum{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,7vw,52px);line-height:1;letter-spacing:-.02em}
+.ycount{font-size:13px;color:var(--muted)}
+.month{display:grid;grid-template-columns:52px 1fr;gap:0 14px;border-bottom:1px solid var(--line)}
+.mlabel{font-family:var(--f-mono);font-size:13px;color:var(--faint);padding-top:14px;position:sticky;top:calc(var(--barh,150px) + 4px);align-self:start}
+.mlabel b{font-size:22px;font-weight:500;color:var(--ink);display:block;line-height:1.1}
+.evs{min-width:0}
+.ev{display:grid;grid-template-columns:76px 1fr;gap:4px 12px;padding-block:12px;border-top:1px solid var(--line)}
+.ev:first-child{border-top:0}
+.date{font-family:var(--f-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px;white-space:nowrap}
+.date .dow{color:var(--faint);font-size:11px;margin-left:2px}
+.body{min-width:0}
+.kinds{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:3px}
+.k{font-size:11px;font-weight:700;letter-spacing:.06em;padding:1px 7px;border-radius:4px;background:var(--k-etc-bg);color:var(--k-etc)}
+.k.live{background:var(--k-live-bg);color:var(--k-live)}.k.tv{background:var(--k-tv-bg);color:var(--k-tv)}
+.k.rel{background:var(--k-rel-bg);color:var(--k-rel)}.k.mv{background:var(--k-mv-bg);color:var(--k-mv)}
+.k.stream{background:var(--k-stream-bg);color:var(--k-stream)}.k.mag{background:var(--k-mag-bg);color:var(--k-mag)}
+.k.sns{background:var(--k-sns-bg);color:var(--k-sns)}.k.none{background:none;color:var(--k-none);border:1px dashed var(--line)}
+.k.plan{background:none;color:var(--accent);border:1px solid var(--accent)}
+.t{margin:0;font-weight:700;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
+.sub{margin:0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
+.ev.future .t{font-weight:500}
+.thumbs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.thumbs button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden;line-height:0}
+.thumbs img{width:120px;height:80px;object-fit:cover;display:block;max-width:100%}
+.evedit{margin-top:6px;border:1px solid var(--line);background:var(--surface);border-radius:6px;font-size:12px;padding:2px 10px;cursor:pointer}
+.now{display:flex;align-items:center;gap:10px;color:var(--accent);font-family:var(--f-mono);font-size:12px;padding-block:10px;grid-column:1/-1}
+.now::before,.now::after{content:"";height:1px;flex:1;background:var(--accent)}
+.empty{padding-block:60px;text-align:center;color:var(--muted)}
+.foot{padding-block:40px;font-size:12px;color:var(--faint)}
+@media (max-width:520px){
+  .month{grid-template-columns:1fr}
+  .mlabel{position:static;padding-top:14px;display:flex;align-items:baseline;gap:6px}
+  .mlabel b{display:inline;font-size:18px}
+  .ev{grid-template-columns:62px 1fr;gap:2px 10px}
+  .thumbs img{width:96px;height:64px}
+}
+
+/* lightbox */
+.lb{position:fixed;inset:0;z-index:30;background:rgba(8,9,12,.88);display:flex;align-items:center;justify-content:center;
+  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
+.lb img{max-height:100%;max-width:100%;border-radius:6px}
+
+
+.toast{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:calc(24px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:13px;max-width:calc(100% - 32px)}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+</head>
+<body>
+<div id="app"><p class="empty">年表を読み込んでいます…</p></div>
+<div id="overlay"></div>
+<script>
+(function(){
+var KINDS=["ライブ","出演","リリース","MV","配信","雑誌","SNS","その他"];
+var KC={"ライブ":"live","出演":"tv","リリース":"rel","MV":"mv","配信":"stream","雑誌":"mag","SNS":"sns","その他":"etc"};
+var NONE="未分類";
+var DOW=["日","月","火","水","木","金","土"];
+var st={q:"",kinds:[],order:"asc"};
+var DATA={events:[]},events=[];
+try{if(localStorage.getItem("mz-order")==="desc")st.order="desc";}catch(e){}
+var app=document.getElementById('app');
+
+function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+function pad(n){return(n<10?"0":"")+n;}
+function todayStr(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+function dow(s){var p=s.split("-");return DOW[new Date(Date.UTC(+p[0],+p[1]-1,+p[2])).getUTCDay()];}
+function sorted(){
+  var a=events.filter(function(e){return e.d&&e.t;}).slice();
+  a.sort(function(x,y){return x.d<y.d?-1:x.d>y.d?1:(x._i-y._i);});
+  return a;
+}
+function match(e){
+  if(st.kinds.length){
+    var ks=e.k&&e.k.length?e.k:[NONE];
+    if(!ks.some(function(k){return st.kinds.indexOf(k)>=0;}))return false;
+  }
+  if(st.q){var q=st.q.toLowerCase();if((e.t+" "+e.d.replace(/-/g,".")).toLowerCase().indexOf(q)<0)return false;}
+  return true;
+}
+function shell(){
+  var all=sorted();
+  var first=all.length?all[0].d:"",last=all.length?all[all.length-1].d:"";
+  app.innerHTML=
+  '<div class="wrap">'+
+  '<header class="head"><h1 class="mark">MAZZEL<small>年表 · ACTIVITY ARCHIVE</small></h1>'+
+  '<div class="meta"><div><b>'+all.length+'</b>件の記録</div>'+
+  '<div><b>'+esc(first.slice(0,7).replace("-","."))+'–'+esc(last.slice(0,7).replace("-","."))+'</b>収録期間</div>'+
+  '<div><b>'+esc((DATA.updated||"").replace(/-/g,"."))+'</b>最終更新</div></div></header>'+
+  '<div class="bar" id="bar"><div class="row1"><input id="q" class="search" type="search" placeholder="番組名・会場・曲名で検索" aria-label="検索">'+
+  '<button id="order" class="order" type="button"></button></div>'+
+  '<div class="chips" id="chips" role="group" aria-label="種別で絞り込み"></div>'+
+  '<nav class="years" id="years" aria-label="年へ移動"></nav></div>'+
+  '<main id="list"></main>'+
+  '<footer class="foot">ファンが個人でまとめた非公式の年表です。内容の誤りや追加情報があればお知らせください。</footer>'+
+  '</div>';
+  document.getElementById('q').addEventListener('input',function(e){st.q=e.target.value.trim();render();});
+  document.getElementById('order').addEventListener('click',function(){st.order=st.order==="asc"?"desc":"asc";try{localStorage.setItem("mz-order",st.order);}catch(e){}render();});
+  document.getElementById('chips').addEventListener('click',function(e){
+    var b=e.target.closest('.fchip');if(!b)return;var k=b.dataset.k;
+    if(k==="")st.kinds=[];else{var i=st.kinds.indexOf(k);if(i>=0)st.kinds.splice(i,1);else st.kinds.push(k);}
+    render();
+  });
+  document.getElementById('years').addEventListener('click',function(e){
+    var b=e.target.closest('.ylink');if(!b)return;var el=document.getElementById('y'+b.dataset.y);if(el)el.scrollIntoView();
+  });
+  document.getElementById('list').addEventListener('click',function(e){
+    var z=e.target.closest('[data-zoom]');if(z)lightbox(z.getAttribute('data-zoom'));
+  });
+  measure();window.addEventListener('resize',measure);
+}
+function measure(){var b=document.getElementById('bar');if(b)document.documentElement.style.setProperty('--barh',(b.offsetHeight+8)+'px');}
+function render(){
+  var all=sorted(),today=todayStr();
+  var counts={};all.forEach(function(e){(e.k&&e.k.length?e.k:[NONE]).forEach(function(k){counts[k]=(counts[k]||0)+1;});});
+  var list=KINDS.filter(function(k){return counts[k];});if(counts[NONE])list.push(NONE);
+  var ch='<button type="button" class="fchip" data-k="" aria-pressed="'+(st.kinds.length?"false":"true")+'">すべて</button>';
+  list.forEach(function(k){ch+='<button type="button" class="fchip" data-k="'+esc(k)+'" aria-pressed="'+(st.kinds.indexOf(k)>=0)+'">'+esc(k)+'<span class="n">'+counts[k]+'</span></button>';});
+  document.getElementById('chips').innerHTML=ch;
+  document.getElementById('order').textContent=st.order==="asc"?"古い順 ↓":"新しい順 ↓";
+  var vis=all.filter(match);if(st.order==="desc")vis.reverse();
+  var years=[];vis.forEach(function(e){var y=e.d.slice(0,4);if(years.indexOf(y)<0)years.push(y);});
+  var ty=today.slice(0,4);
+  document.getElementById('years').innerHTML=years.map(function(y){return'<button type="button" class="ylink'+(y===ty?' today':'')+'" data-y="'+y+'">'+y+'</button>';}).join("");
+  if(!vis.length){document.getElementById('list').innerHTML='<p class="empty">条件に合う出来事が見つかりません。<br>検索語や種別の絞り込みを変えてみてください。</p>';measure();return;}
+  var h="",cy=null,cm=null,nowDone=false,sawFut=false,sawPast=false;
+  function closeM(){if(cm!==null)h+='</div></div>';}
+  function closeY(){if(cy!==null){closeM();h+='</section>';}}
+  var ycount={};vis.forEach(function(e){var y=e.d.slice(0,4);ycount[y]=(ycount[y]||0)+1;});
+  vis.forEach(function(e){
+    var y=e.d.slice(0,4),m=e.d.slice(5,7);
+    if(y!==cy){closeY();h+='<section class="year" id="y'+y+'"><div class="yhead"><span class="ynum">'+y+'</span><span class="ycount">'+ycount[y]+'件</span></div>';cy=y;cm=null;}
+    if(m!==cm){closeM();h+='<div class="month"><div class="mlabel"><b>'+m+'</b>月</div><div class="evs">';cm=m;}
+    var fut=e.d>today;
+    if(fut)sawFut=true;
+    if(!nowDone&&!st.q&&((st.order==="asc"&&fut&&sawPast)||(st.order==="desc"&&!fut&&sawFut))){h+='<div class="now">TODAY '+today.replace(/-/g,".")+'</div>';nowDone=true;}
+    if(!fut)sawPast=true;
+    h+=evHTML(e,fut);
+  });
+  closeY();
+  document.getElementById('list').innerHTML=h;
+  measure();
+}
+function evHTML(e,fut){
+  var lines=e.t.split(/\n+/),t=lines.shift(),sub=lines.join(" / ");
+  var p=e.d.split("-"),ds=p[1]+"."+p[2];
+  if(e.e&&e.e!==e.d){var q=e.e.split("-");ds+="–"+(q[0]!==p[0]?q[0]+".":"")+q[1]+"."+q[2];}
+  var ks=e.k&&e.k.length?e.k:null;
+  var kh=ks?ks.map(function(k){return'<span class="k '+(KC[k]||"etc")+'">'+esc(k)+'</span>';}).join(""):'<span class="k none">'+NONE+'</span>';
+  if(fut)kh+='<span class="k plan">予定</span>';
+  var th="";
+  if(e.img&&e.img.length){th='<div class="thumbs">'+e.img.map(function(src){return'<button type="button" data-zoom="'+esc(src)+'" aria-label="画像を拡大"><img loading="lazy" alt="" src="'+esc(src)+'"></button>';}).join("")+'</div>';}
+  return'<article class="ev'+(fut?' future':'')+'"><div class="date">'+ds+'<span class="dow">'+dow(e.d)+'</span></div><div class="body"><div class="kinds">'+kh+'</div><p class="t">'+esc(t)+'</p>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+th+'</div></article>';
+}
+function lightbox(src){
+  var o=document.getElementById('overlay');
+  o.innerHTML='<div class="lb" role="dialog" aria-label="画像" tabindex="-1"><img alt="" src="'+esc(src)+'"></div>';
+  var lb=o.firstChild;lb.focus();
+  function close(){o.innerHTML="";document.removeEventListener('keydown',k);}
+  function k(ev){if(ev.key==="Escape")close();}
+  lb.addEventListener('click',close);document.addEventListener('keydown',k);
+}
+fetch('data/events.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+  DATA=d;events=(d.events||[]).map(function(e,i){e._i=i;return e;});
+  shell();render();
+}).catch(function(){
+  app.innerHTML='<p class="empty">年表データを読み込めませんでした。<br>時間をおいてページを再読み込みしてください。</p>';
+});
+})();
+</script>
+</body>
+</html>
