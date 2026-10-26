@@ -4,239 +4,244 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>MAZZEL 年表</title>
-<meta name="description" content="MAZZELの出演・ライブ・リリースなどを年・月ごとにたどれる非公式ファン年表。">
+<meta name="description" content="MAZZELの出演・ライブ・リリースなどを、通し番号つきでまとめた非公式ファン年表。">
 <meta property="og:title" content="MAZZEL 年表">
-<meta property="og:description" content="MAZZELの出演・ライブ・リリースなどを年・月ごとにたどれる非公式ファン年表。">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
-<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}
-
-/* Layout: one reading column; big year numerals mark eras, a sticky filter bar, dated rows with kind chips. */
+<meta property="og:description" content="MAZZELの出演・ライブ・リリースなどを、通し番号つきでまとめた非公式ファン年表。">
+<meta name="theme-color" content="#FFFFFF">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,700;0,6..96,900;1,6..96,400;1,6..96,500&family=Zen+Old+Mincho:wght@400;700&family=Noto+Sans+JP:wght@400;500;700&family=Roboto+Mono:wght@400;500&display=swap">
+<style>
+/* Magazine index: masthead + contents, then one spread per month — rotated English month name, photo plate grid, numbered list. */
 :root{
-  --bg:#F3F4F7;--surface:#FFFFFF;--ink:#15161D;--muted:#5B5F6E;--faint:#8A8E9C;--line:#DCDFE6;
-  --accent:#3646D8;--accent-ink:#FFFFFF;--accent-soft:#E6E8FB;--danger:#C2283B;
-  --k-live-bg:#FCE4EE;--k-live:#A3134E;--k-tv-bg:#E9EBF0;--k-tv:#3F4454;--k-rel-bg:#FDEBD9;--k-rel:#9A4A06;
-  --k-mv-bg:#F0E6DD;--k-mv:#7A4A2A;--k-stream-bg:#DFF3E6;--k-stream:#1D6B3C;--k-mag-bg:#FBE3E1;--k-mag:#A82A22;
-  --k-sns-bg:#EEE5FA;--k-sns:#6233A8;--k-etc-bg:#EDEEF1;--k-etc:#5B5F6E;--k-none-bg:transparent;--k-none:#8A8E9C;
-  --f-display:"Unbounded","Zen Kaku Gothic New",system-ui,sans-serif;
-  --f-body:"Zen Kaku Gothic New","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
-  --f-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",Menlo,monospace;
+  --paper:#FFFFFF;--ink:#1A1A1A;--muted:#5F6168;--faint:#8D8F96;--rule:#1A1A1A;--hair:#E3E4E7;--plate:#ECEDEF;--blue:#2335A8;
+  --f-didone:"Bodoni Moda","Didot","Bodoni 72",Georgia,serif;
+  --f-mincho:"Zen Old Mincho","Hiragino Mincho ProN","Yu Mincho",serif;
+  --f-sans:"Noto Sans JP","Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,sans-serif;
+  --f-mono:"Roboto Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
 }
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
-  --bg:#0E0F14;--surface:#171922;--ink:#ECEDF3;--muted:#A0A4B3;--faint:#6F7383;--line:#2A2D3A;
-  --accent:#8E98FF;--accent-ink:#0E0F14;--accent-soft:#232744;--danger:#FF6B7D;
-  --k-live-bg:#3A1426;--k-live:#FF8DB8;--k-tv-bg:#252834;--k-tv:#C3C7D4;--k-rel-bg:#3A2610;--k-rel:#FFB36B;
-  --k-mv-bg:#33261C;--k-mv:#E2B08A;--k-stream-bg:#13301F;--k-stream:#7FDDA2;--k-mag-bg:#3A1714;--k-mag:#FF968C;
-  --k-sns-bg:#2A1D42;--k-sns:#C5A3FF;--k-etc-bg:#23252E;--k-etc:#A0A4B3;--k-none:#6F7383;
-  color-scheme:dark}}
-:root[data-theme="dark"]{
-  --bg:#0E0F14;--surface:#171922;--ink:#ECEDF3;--muted:#A0A4B3;--faint:#6F7383;--line:#2A2D3A;
-  --accent:#8E98FF;--accent-ink:#0E0F14;--accent-soft:#232744;--danger:#FF6B7D;
-  --k-live-bg:#3A1426;--k-live:#FF8DB8;--k-tv-bg:#252834;--k-tv:#C3C7D4;--k-rel-bg:#3A2610;--k-rel:#FFB36B;
-  --k-mv-bg:#33261C;--k-mv:#E2B08A;--k-stream-bg:#13301F;--k-stream:#7FDDA2;--k-mag-bg:#3A1714;--k-mag:#FF968C;
-  --k-sns-bg:#2A1D42;--k-sns:#C5A3FF;--k-etc-bg:#23252E;--k-etc:#A0A4B3;--k-none:#6F7383;
-  color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.6;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
-.wrap{max-width:860px;margin:0 auto}
-button,input,textarea{font:inherit;color:inherit}
-:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--f-sans);font-size:15px;line-height:1.6}
+img{max-width:100%;display:block}
+[hidden]{display:none!important}
+a{color:inherit}
+button,input{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(24px,env(safe-area-inset-left,0px));padding-right:max(24px,env(safe-area-inset-right,0px))}
+.sc{font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+.no{font-family:var(--f-mono);font-size:12px;color:var(--blue);font-variant-numeric:tabular-nums}
+.it{font-family:var(--f-didone);font-style:italic}
 
-/* header */
-.head{padding-block:40px 20px;display:flex;flex-wrap:wrap;gap:16px;align-items:flex-end;justify-content:space-between}
-.mark{font-family:var(--f-display);font-weight:700;font-size:clamp(40px,9vw,76px);line-height:.95;letter-spacing:-.02em;margin:0;text-wrap:balance}
-.mark small{display:block;font-family:var(--f-body);font-weight:700;font-size:.34em;letter-spacing:.18em;margin-top:.45em;color:var(--muted)}
-.meta{display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
-.meta b{display:block;font-family:var(--f-mono);font-weight:500;font-size:20px;color:var(--ink);font-variant-numeric:tabular-nums;letter-spacing:-.01em}
-.editbtn{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:13px;cursor:pointer}
-.editbtn[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+/* masthead */
+.topline{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;padding-block:20px 10px;border-bottom:1px solid var(--rule)}
+.mast{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:48px;align-items:end;padding-block:28px 26px;border-bottom:3px double var(--rule)}
+.mast h1{margin:0;display:flex;align-items:baseline;gap:18px;flex-wrap:wrap}
+.mh{font-family:var(--f-didone);font-weight:900;font-size:clamp(64px,11vw,118px);line-height:.9;letter-spacing:-.01em}
+.mh-ja{font-family:var(--f-mincho);font-weight:700;font-size:28px}
+.kicker{margin:12px 0 0;font-family:var(--f-didone);font-style:italic;font-size:16px}
+.contents{display:flex;flex-direction:column;gap:6px}
+.ix{display:grid;grid-template-columns:auto 1fr auto;gap:10px;align-items:baseline;font-family:var(--f-didone);font-size:17px;text-decoration:none;cursor:pointer;background:none;border:0;padding:0;text-align:left}
+.ix .dots{border-bottom:1px dotted #A2A4AA;transform:translateY(-4px)}
+.ix:hover .yr{text-decoration:underline;text-underline-offset:3px}
 
-/* toolbar */
-.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:10px;border-bottom:1px solid var(--line);display:grid;gap:10px}
-.row1{display:flex;gap:8px;align-items:center}
-.search{flex:1;min-width:0;border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font-size:15px}
-.order{border:1px solid var(--line);background:var(--surface);border-radius:10px;padding:9px 12px;font-size:13px;white-space:nowrap;cursor:pointer}
-.chips{display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
-.chips::-webkit-scrollbar{display:none}
-.fchip{flex:none;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:4px 11px;font-size:13px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
-.fchip .n{font-family:var(--f-mono);font-size:11px;color:var(--faint);font-variant-numeric:tabular-nums}
-.fchip[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
-.fchip[aria-pressed="true"] .n{color:inherit;opacity:.7}
-.years{display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
-.years::-webkit-scrollbar{display:none}
-.ylink{flex:none;border:0;background:none;padding:2px 8px;font-family:var(--f-display);font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-radius:6px}
-.ylink:hover{color:var(--ink);background:var(--accent-soft)}
-.ylink.today{color:var(--accent)}
+/* filter bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--paper);border-bottom:1px solid var(--rule)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.bar .wrap{display:flex;flex-wrap:wrap;gap:10px 22px;align-items:center;padding-block:12px}
+.types{display:flex;flex-wrap:wrap;gap:6px 18px}
+.typ{background:none;border:0;padding:2px 0;font-size:13px;font-weight:500;color:var(--muted);cursor:pointer;border-bottom:1px solid transparent}
+.typ[aria-pressed="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
+.typ .n{font-family:var(--f-mono);font-size:11px;color:var(--faint);margin-left:4px}
+.tools{margin-left:auto;display:flex;gap:16px;align-items:center}
+.search{width:200px;max-width:100%;border:0;border-bottom:1px solid var(--rule);background:transparent;padding:4px 0;font-size:14px;border-radius:0}
+.search::placeholder{color:var(--faint)}
+.order{background:none;border:0;padding:0;font-family:var(--f-didone);font-style:italic;font-size:15px;cursor:pointer;white-space:nowrap}
 
-/* timeline */
-.year{scroll-margin-top:var(--barh,150px);padding-top:36px}
-.yhead{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:6px}
-.ynum{font-family:var(--f-display);font-weight:700;font-size:clamp(34px,7vw,52px);line-height:1;letter-spacing:-.02em}
-.ycount{font-size:13px;color:var(--muted)}
-.month{display:grid;grid-template-columns:52px 1fr;gap:0 14px;border-bottom:1px solid var(--line)}
-.mlabel{font-family:var(--f-mono);font-size:13px;color:var(--faint);padding-top:14px;position:sticky;top:calc(var(--barh,150px) + 4px);align-self:start}
-.mlabel b{font-size:22px;font-weight:500;color:var(--ink);display:block;line-height:1.1}
-.evs{min-width:0}
-.ev{display:grid;grid-template-columns:76px 1fr;gap:4px 12px;padding-block:12px;border-top:1px solid var(--line)}
-.ev:first-child{border-top:0}
-.date{font-family:var(--f-mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:2px;white-space:nowrap}
-.date .dow{color:var(--faint);font-size:11px;margin-left:2px}
-.body{min-width:0}
-.kinds{display:flex;gap:4px;flex-wrap:wrap;margin-bottom:3px}
-.k{font-size:11px;font-weight:700;letter-spacing:.06em;padding:1px 7px;border-radius:4px;background:var(--k-etc-bg);color:var(--k-etc)}
-.k.live{background:var(--k-live-bg);color:var(--k-live)}.k.tv{background:var(--k-tv-bg);color:var(--k-tv)}
-.k.rel{background:var(--k-rel-bg);color:var(--k-rel)}.k.mv{background:var(--k-mv-bg);color:var(--k-mv)}
-.k.stream{background:var(--k-stream-bg);color:var(--k-stream)}.k.mag{background:var(--k-mag-bg);color:var(--k-mag)}
-.k.sns{background:var(--k-sns-bg);color:var(--k-sns)}.k.none{background:none;color:var(--k-none);border:1px dashed var(--line)}
-.k.plan{background:none;color:var(--accent);border:1px solid var(--accent)}
-.t{margin:0;font-weight:700;font-size:15px;line-height:1.5;overflow-wrap:anywhere}
-.sub{margin:0;color:var(--muted);font-size:13px;overflow-wrap:anywhere}
-.ev.future .t{font-weight:500}
-.thumbs{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
-.thumbs button{border:0;padding:0;background:none;cursor:zoom-in;border-radius:6px;overflow:hidden;line-height:0}
-.thumbs img{width:120px;height:80px;object-fit:cover;display:block;max-width:100%}
-.evedit{margin-top:6px;border:1px solid var(--line);background:var(--surface);border-radius:6px;font-size:12px;padding:2px 10px;cursor:pointer}
-.now{display:flex;align-items:center;gap:10px;color:var(--accent);font-family:var(--f-mono);font-size:12px;padding-block:10px;grid-column:1/-1}
-.now::before,.now::after{content:"";height:1px;flex:1;background:var(--accent)}
-.empty{padding-block:60px;text-align:center;color:var(--muted)}
-.foot{padding-block:40px;font-size:12px;color:var(--faint)}
-@media (max-width:520px){
-  .month{grid-template-columns:1fr}
-  .mlabel{position:static;padding-top:14px;display:flex;align-items:baseline;gap:6px}
-  .mlabel b{display:inline;font-size:18px}
-  .ev{grid-template-columns:62px 1fr;gap:2px 10px}
-  .thumbs img{width:96px;height:64px}
-}
+/* year + month */
+.year{scroll-margin-top:var(--barh,64px)}
+.yhead{display:flex;align-items:baseline;justify-content:space-between;gap:16px;padding-block:52px 10px;border-bottom:1px solid var(--rule)}
+.ynum{font-family:var(--f-didone);font-weight:400;font-size:clamp(48px,7vw,72px);line-height:1}
+.mon{display:grid;grid-template-columns:110px minmax(0,1fr);gap:32px;padding-block:40px;border-bottom:1px solid var(--rule)}
+.mlabel{writing-mode:vertical-rl;transform:rotate(180deg);display:flex;flex-direction:column;gap:14px;align-items:center;justify-content:flex-end;align-self:start;position:sticky;top:calc(var(--barh,64px) + 16px)}
+.mname{font-family:var(--f-didone);font-style:italic;font-size:88px;line-height:1;letter-spacing:-.01em}
+.myear{font-family:var(--f-mono);font-size:13px;color:var(--muted);writing-mode:horizontal-tb;transform:rotate(180deg)}
+.mbody{display:flex;flex-direction:column;gap:32px;min-width:0}
+.plates{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-flow:dense;gap:28px 20px}
+.plate{margin:0;min-width:0;grid-column:span 2}
+.plate.L{grid-column:span 4;grid-row:span 2}
+.plate .img{display:block;width:100%;padding:0;border:0;background:var(--plate);cursor:zoom-in;overflow:hidden}
+.plate .img img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.plate.S .img img{aspect-ratio:1/1}
+.plate figcaption{display:flex;flex-direction:column;gap:3px;padding-top:8px}
+.pl{font-family:var(--f-mincho);font-weight:700;font-size:16px;line-height:1.4;overflow-wrap:anywhere}
+.plate.L .pl{font-size:24px}
+.pt{font-family:var(--f-didone);font-style:italic;font-size:13px;color:#4A4C53;overflow-wrap:anywhere}
+.more{margin:0 0 8px}
+.list{list-style:none;margin:0;padding:0;columns:2 300px;column-gap:40px}
+.list li{break-inside:avoid;display:grid;grid-template-columns:62px 64px minmax(0,1fr);gap:8px;align-items:baseline;padding:7px 0;border-top:1px solid var(--hair);font-size:14px}
+.ld{font-family:var(--f-didone);font-style:italic;font-size:14px;white-space:nowrap}
+.lt{min-width:0;overflow-wrap:anywhere}
+.lk{display:block;font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);margin-bottom:1px}
+.lk .up{color:var(--blue)}
+.lv{color:var(--muted);font-size:13px}
+.empty{padding-block:80px;text-align:center;color:var(--muted)}
+.empty .it{font-size:22px;color:var(--ink);display:block;margin-bottom:8px}
+.foot{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:32px 64px;font-size:12px;color:var(--muted)}
 
 /* lightbox */
-.lb{position:fixed;inset:0;z-index:30;background:rgba(8,9,12,.88);display:flex;align-items:center;justify-content:center;
-  padding:max(16px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(16px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px));cursor:zoom-out}
-.lb img{max-height:100%;max-width:100%;border-radius:6px}
+.lb{position:fixed;inset:0;z-index:30;background:rgba(255,255,255,.96);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;cursor:zoom-out;
+  padding:max(24px,env(safe-area-inset-top,0px)) max(24px,env(safe-area-inset-right,0px)) max(24px,env(safe-area-inset-bottom,0px)) max(24px,env(safe-area-inset-left,0px))}
+.lb img{max-height:calc(100% - 40px);max-width:100%;object-fit:contain}
+.lb p{margin:0;font-family:var(--f-didone);font-style:italic;font-size:15px}
 
-
-.toast{position:fixed;z-index:40;left:50%;transform:translateX(-50%);bottom:calc(24px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--bg);padding:9px 16px;border-radius:8px;font-size:13px;max-width:calc(100% - 32px)}
+@media (max-width:760px){
+  .mast{grid-template-columns:1fr;gap:24px}
+  .mon{grid-template-columns:1fr;gap:16px;padding-block:28px}
+  .mlabel{writing-mode:horizontal-tb;transform:none;flex-direction:row;align-items:baseline;justify-content:flex-start;position:static}
+  .myear{transform:none}
+  .mname{font-size:52px}
+  .plates{grid-template-columns:repeat(2,minmax(0,1fr));gap:20px 14px}
+  .plate,.plate.S{grid-column:span 1}.plate.L{grid-column:span 2;grid-row:auto}
+  .tools{margin-left:0;width:100%}.search{flex:1;width:auto}
+  .list li{grid-template-columns:52px 58px minmax(0,1fr)}
+}
 @media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
 </style>
 </head>
 <body>
-<div id="app"><p class="empty">年表を読み込んでいます…</p></div>
+<div id="app"><p class="empty wrap"><span class="it">Loading…</span>年表を読み込んでいます</p></div>
 <div id="overlay"></div>
 <script>
 (function(){
 var KINDS=["ライブ","出演","リリース","MV","配信","雑誌","SNS","その他"];
-var KC={"ライブ":"live","出演":"tv","リリース":"rel","MV":"mv","配信":"stream","雑誌":"mag","SNS":"sns","その他":"etc"};
+var KEN={"ライブ":"Live","出演":"TV","リリース":"Release","MV":"MV","配信":"Stream","雑誌":"Print","SNS":"SNS","その他":"Other"};
 var NONE="未分類";
-var DOW=["日","月","火","水","木","金","土"];
+var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
+var DOW=["Sun.","Mon.","Tue.","Wed.","Thu.","Fri.","Sat."];
 var st={q:"",kinds:[],order:"asc"};
-var DATA={events:[]},events=[];
+var DATA={},all=[];
 try{if(localStorage.getItem("mz-order")==="desc")st.order="desc";}catch(e){}
-var app=document.getElementById('app');
+var app=document.getElementById("app");
 
 function esc(s){return String(s==null?"":s).replace(/[&<>"']/g,function(c){return{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
-function pad(n){return(n<10?"0":"")+n;}
-function todayStr(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
+function pad(n,w){n=String(n);while(n.length<(w||2))n="0"+n;return n;}
+function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
 function dow(s){var p=s.split("-");return DOW[new Date(Date.UTC(+p[0],+p[1]-1,+p[2])).getUTCDay()];}
-function sorted(){
-  var a=events.filter(function(e){return e.d&&e.t;}).slice();
-  a.sort(function(x,y){return x.d<y.d?-1:x.d>y.d?1:(x._i-y._i);});
-  return a;
-}
+function kindsOf(e){return e.k&&e.k.length?e.k:[NONE];}
+function split(t){var l=String(t).split(/\n+/).map(function(x){return x.trim();}).filter(Boolean);return{head:l[0]||"",rest:l.slice(1).join(" / ")};}
 function match(e){
-  if(st.kinds.length){
-    var ks=e.k&&e.k.length?e.k:[NONE];
-    if(!ks.some(function(k){return st.kinds.indexOf(k)>=0;}))return false;
-  }
+  if(st.kinds.length&&!kindsOf(e).some(function(k){return st.kinds.indexOf(k)>=0;}))return false;
   if(st.q){var q=st.q.toLowerCase();if((e.t+" "+e.d.replace(/-/g,".")).toLowerCase().indexOf(q)<0)return false;}
   return true;
 }
+
 function shell(){
-  var all=sorted();
+  var years={};all.forEach(function(e){var y=e.d.slice(0,4);if(!years[y])years[y]=[e.no,e.no];years[y][1]=e.no;});
+  var ys=Object.keys(years).sort();
   var first=all.length?all[0].d:"",last=all.length?all[all.length-1].d:"";
+  var since=first?MONTHS[+first.slice(5,7)-1]+" "+first.slice(0,4):"";
   app.innerHTML=
-  '<div class="wrap">'+
-  '<header class="head"><h1 class="mark">MAZZEL<small>年表 · ACTIVITY ARCHIVE</small></h1>'+
-  '<div class="meta"><div><b>'+all.length+'</b>件の記録</div>'+
-  '<div><b>'+esc(first.slice(0,7).replace("-","."))+'–'+esc(last.slice(0,7).replace("-","."))+'</b>収録期間</div>'+
-  '<div><b>'+esc((DATA.updated||"").replace(/-/g,"."))+'</b>最終更新</div></div></header>'+
-  '<div class="bar" id="bar"><div class="row1"><input id="q" class="search" type="search" placeholder="番組名・会場・曲名で検索" aria-label="検索">'+
-  '<button id="order" class="order" type="button"></button></div>'+
-  '<div class="chips" id="chips" role="group" aria-label="種別で絞り込み"></div>'+
-  '<nav class="years" id="years" aria-label="年へ移動"></nav></div>'+
-  '<main id="list"></main>'+
-  '<footer class="foot">ファンが個人でまとめた非公式の年表です。内容の誤りや追加情報があればお知らせください。</footer>'+
-  '</div>';
-  document.getElementById('q').addEventListener('input',function(e){st.q=e.target.value.trim();render();});
-  document.getElementById('order').addEventListener('click',function(){st.order=st.order==="asc"?"desc":"asc";try{localStorage.setItem("mz-order",st.order);}catch(e){}render();});
-  document.getElementById('chips').addEventListener('click',function(e){
-    var b=e.target.closest('.fchip');if(!b)return;var k=b.dataset.k;
-    if(k==="")st.kinds=[];else{var i=st.kinds.indexOf(k);if(i>=0)st.kinds.splice(i,1);else st.kinds.push(k);}
+  '<div class="wrap"><div class="topline"><span class="sc">An unofficial fan archive</span><span class="sc">Since '+esc(since)+' · '+all.length+' entries</span></div>'+
+  '<header class="mast"><div><h1><span class="mh">MAZZEL</span><span class="mh-ja">年表</span></h1>'+
+  '<p class="kicker">The complete chronicle, entry by entry — '+esc(first.slice(0,4))+' to the present.</p></div>'+
+  '<nav class="contents" aria-label="年"><span class="sc" style="margin-bottom:4px">Contents</span>'+
+  ys.map(function(y){return'<button type="button" class="ix" data-y="'+y+'"><span class="yr">'+y+'</span><span class="dots"></span><span class="no">'+pad(years[y][0],3)+'–'+pad(years[y][1],3)+'</span></button>';}).join("")+
+  '</nav></header></div>'+
+  '<div class="bar" id="bar"><div class="wrap"><div class="types" id="types" role="group" aria-label="種別"></div>'+
+  '<div class="tools"><input id="q" class="search" type="search" placeholder="番組名・会場で検索" aria-label="検索"><button type="button" class="order" id="order"></button></div></div></div>'+
+  '<main class="wrap" id="list"></main>'+
+  '<footer class="wrap foot"><span>ファンが個人でまとめた非公式の年表です。内容の誤りや追加情報があればお知らせください。</span><span class="it" style="font-size:13px">Last updated '+esc((DATA.updated||"").replace(/-/g,"."))+'</span></footer>';
+  document.querySelector(".contents").addEventListener("click",function(e){
+    var b=e.target.closest("[data-y]");if(!b)return;
+    if(st.kinds.length||st.q){st.kinds=[];st.q="";document.getElementById("q").value="";render();}
+    var el=document.getElementById("y"+b.dataset.y);if(el)el.scrollIntoView();
+  });
+  document.getElementById("types").addEventListener("click",function(e){
+    var b=e.target.closest(".typ");if(!b)return;var k=b.dataset.k;
+    if(!k)st.kinds=[];else{var i=st.kinds.indexOf(k);if(i>=0)st.kinds.splice(i,1);else st.kinds.push(k);}
     render();
   });
-  document.getElementById('years').addEventListener('click',function(e){
-    var b=e.target.closest('.ylink');if(!b)return;var el=document.getElementById('y'+b.dataset.y);if(el)el.scrollIntoView();
+  document.getElementById("q").addEventListener("input",function(e){st.q=e.target.value.trim();render();});
+  document.getElementById("order").addEventListener("click",function(){st.order=st.order==="asc"?"desc":"asc";try{localStorage.setItem("mz-order",st.order);}catch(e){}render();});
+  document.getElementById("list").addEventListener("click",function(e){
+    var b=e.target.closest("[data-zoom]");if(b)lightbox(b.getAttribute("data-zoom"),b.getAttribute("data-cap"));
   });
-  document.getElementById('list').addEventListener('click',function(e){
-    var z=e.target.closest('[data-zoom]');if(z)lightbox(z.getAttribute('data-zoom'));
-  });
-  measure();window.addEventListener('resize',measure);
+  measure();window.addEventListener("resize",measure);
 }
-function measure(){var b=document.getElementById('bar');if(b)document.documentElement.style.setProperty('--barh',(b.offsetHeight+8)+'px');}
+function measure(){var b=document.getElementById("bar");if(b)document.documentElement.style.setProperty("--barh",(b.offsetHeight+8)+"px");}
+
 function render(){
-  var all=sorted(),today=todayStr();
-  var counts={};all.forEach(function(e){(e.k&&e.k.length?e.k:[NONE]).forEach(function(k){counts[k]=(counts[k]||0)+1;});});
-  var list=KINDS.filter(function(k){return counts[k];});if(counts[NONE])list.push(NONE);
-  var ch='<button type="button" class="fchip" data-k="" aria-pressed="'+(st.kinds.length?"false":"true")+'">すべて</button>';
-  list.forEach(function(k){ch+='<button type="button" class="fchip" data-k="'+esc(k)+'" aria-pressed="'+(st.kinds.indexOf(k)>=0)+'">'+esc(k)+'<span class="n">'+counts[k]+'</span></button>';});
-  document.getElementById('chips').innerHTML=ch;
-  document.getElementById('order').textContent=st.order==="asc"?"古い順 ↓":"新しい順 ↓";
+  var counts={};all.forEach(function(e){kindsOf(e).forEach(function(k){counts[k]=(counts[k]||0)+1;});});
+  var ks=KINDS.filter(function(k){return counts[k];});if(counts[NONE])ks.push(NONE);
+  document.getElementById("types").innerHTML='<button type="button" class="typ" data-k="" aria-pressed="'+(!st.kinds.length)+'">すべて</button>'+
+    ks.map(function(k){return'<button type="button" class="typ" data-k="'+esc(k)+'" aria-pressed="'+(st.kinds.indexOf(k)>=0)+'">'+esc(k)+'<span class="n">'+counts[k]+'</span></button>';}).join("");
+  document.getElementById("order").textContent=st.order==="asc"?"Oldest first":"Newest first";
   var vis=all.filter(match);if(st.order==="desc")vis.reverse();
-  var years=[];vis.forEach(function(e){var y=e.d.slice(0,4);if(years.indexOf(y)<0)years.push(y);});
-  var ty=today.slice(0,4);
-  document.getElementById('years').innerHTML=years.map(function(y){return'<button type="button" class="ylink'+(y===ty?' today':'')+'" data-y="'+y+'">'+y+'</button>';}).join("");
-  if(!vis.length){document.getElementById('list').innerHTML='<p class="empty">条件に合う出来事が見つかりません。<br>検索語や種別の絞り込みを変えてみてください。</p>';measure();return;}
-  var h="",cy=null,cm=null,nowDone=false,sawFut=false,sawPast=false;
-  function closeM(){if(cm!==null)h+='</div></div>';}
-  function closeY(){if(cy!==null){closeM();h+='</section>';}}
-  var ycount={};vis.forEach(function(e){var y=e.d.slice(0,4);ycount[y]=(ycount[y]||0)+1;});
+  var list=document.getElementById("list");
+  if(!vis.length){list.innerHTML='<p class="empty"><span class="it">Nothing found.</span>条件に合う出来事がありません。検索語や種別を変えてみてください。</p>';measure();return;}
+  // group: year -> month
+  var groups=[],gy=null,gm=null;
   vis.forEach(function(e){
     var y=e.d.slice(0,4),m=e.d.slice(5,7);
-    if(y!==cy){closeY();h+='<section class="year" id="y'+y+'"><div class="yhead"><span class="ynum">'+y+'</span><span class="ycount">'+ycount[y]+'件</span></div>';cy=y;cm=null;}
-    if(m!==cm){closeM();h+='<div class="month"><div class="mlabel"><b>'+m+'</b>月</div><div class="evs">';cm=m;}
-    var fut=e.d>today;
-    if(fut)sawFut=true;
-    if(!nowDone&&!st.q&&((st.order==="asc"&&fut&&sawPast)||(st.order==="desc"&&!fut&&sawFut))){h+='<div class="now">TODAY '+today.replace(/-/g,".")+'</div>';nowDone=true;}
-    if(!fut)sawPast=true;
-    h+=evHTML(e,fut);
+    if(!gy||gy.y!==y){gy={y:y,months:[]};groups.push(gy);gm=null;}
+    if(!gm||gm.m!==m){gm={m:m,items:[]};gy.months.push(gm);}
+    gm.items.push(e);
   });
-  closeY();
-  document.getElementById('list').innerHTML=h;
-  measure();
+  var t=today(),h="";
+  groups.forEach(function(g){
+    var n=0;g.months.forEach(function(m){n+=m.items.length;});
+    h+='<section class="year" id="y'+g.y+'"><div class="yhead"><span class="ynum">'+g.y+'</span><span class="sc">'+n+' entries</span></div>';
+    g.months.forEach(function(m){h+=monthHTML(g.y,m,t);});
+    h+='</section>';
+  });
+  list.innerHTML=h;measure();
 }
-function evHTML(e,fut){
-  var lines=e.t.split(/\n+/),t=lines.shift(),sub=lines.join(" / ");
-  var p=e.d.split("-"),ds=p[1]+"."+p[2];
-  if(e.e&&e.e!==e.d){var q=e.e.split("-");ds+="–"+(q[0]!==p[0]?q[0]+".":"")+q[1]+"."+q[2];}
-  var ks=e.k&&e.k.length?e.k:null;
-  var kh=ks?ks.map(function(k){return'<span class="k '+(KC[k]||"etc")+'">'+esc(k)+'</span>';}).join(""):'<span class="k none">'+NONE+'</span>';
-  if(fut)kh+='<span class="k plan">予定</span>';
-  var th="";
-  if(e.img&&e.img.length){th='<div class="thumbs">'+e.img.map(function(src){return'<button type="button" data-zoom="'+esc(src)+'" aria-label="画像を拡大"><img loading="lazy" alt="" src="'+esc(src)+'"></button>';}).join("")+'</div>';}
-  return'<article class="ev'+(fut?' future':'')+'"><div class="date">'+ds+'<span class="dow">'+dow(e.d)+'</span></div><div class="body"><div class="kinds">'+kh+'</div><p class="t">'+esc(t)+'</p>'+(sub?'<p class="sub">'+esc(sub)+'</p>':'')+th+'</div></article>';
+function monthHTML(y,m,t){
+  var name=MONTHS[+m.m-1];
+  var photos=m.items.filter(function(e){return e.img&&e.img.length;});
+  var rest=m.items.filter(function(e){return !(e.img&&e.img.length);});
+  var h='<div class="mon"><div class="mlabel"><span class="mname">'+name+'</span><span class="myear">'+y+'</span></div><div class="mbody">';
+  if(photos.length){
+    var hasFeature=photos.some(function(e){return e.feature;});
+    h+='<div class="plates">'+photos.map(function(e,i){
+      var big=e.feature||(!hasFeature&&i===0&&photos.length>=3);
+      var size=big?"L":(photos.length>3?"S":"M");
+      var s=split(e.t),place=s.rest||s.head,title=s.rest?s.head:"";
+      var day=+e.d.slice(8,10),cap=e.d.replace(/-/g,".")+" "+(s.rest||s.head);
+      return'<figure class="plate '+size+'"><button type="button" class="img" data-zoom="'+esc(e.img[0])+'" data-cap="'+esc(cap)+'" aria-label="写真を拡大"><img loading="lazy" alt="'+esc(s.head)+'" src="'+esc(e.img[0])+'"></button>'+
+        '<figcaption><span class="no">No.'+pad(e.no,3)+' — '+dow(e.d)+' '+day+(e.d>t?' · Upcoming':'')+'</span><span class="pl">'+esc(place)+'</span>'+(title?'<span class="pt">'+esc(title)+'</span>':'')+'</figcaption></figure>';
+    }).join("")+'</div>';
+  }
+  if(rest.length){
+    if(photos.length)h+='<h3 class="sc more">Also in '+name+'</h3>';
+    h+='<ol class="list">'+rest.map(function(e){
+      var s=split(e.t),day=+e.d.slice(8,10);
+      var kl=kindsOf(e).map(function(k){return KEN[k]||"Other";}).join(" · ");
+      return'<li><span class="no">No.'+pad(e.no,3)+'</span><span class="ld">'+dow(e.d)+' '+day+'</span><span class="lt"><span class="lk">'+esc(kl)+(e.d>t?' · <span class="up">Upcoming</span>':'')+'</span>'+esc(s.head)+(s.rest?' <span class="lv">'+esc(s.rest)+'</span>':'')+'</span></li>';
+    }).join("")+'</ol>';
+  }
+  return h+'</div></div>';
 }
-function lightbox(src){
-  var o=document.getElementById('overlay');
-  o.innerHTML='<div class="lb" role="dialog" aria-label="画像" tabindex="-1"><img alt="" src="'+esc(src)+'"></div>';
+function lightbox(src,cap){
+  var o=document.getElementById("overlay");
+  o.innerHTML='<div class="lb" role="dialog" aria-label="写真" tabindex="-1"><img alt="" src="'+esc(src)+'"><p>'+esc(cap||"")+'</p></div>';
   var lb=o.firstChild;lb.focus();
-  function close(){o.innerHTML="";document.removeEventListener('keydown',k);}
+  function close(){o.innerHTML="";document.removeEventListener("keydown",k);}
   function k(ev){if(ev.key==="Escape")close();}
-  lb.addEventListener('click',close);document.addEventListener('keydown',k);
+  lb.addEventListener("click",close);document.addEventListener("keydown",k);
 }
-fetch('data/events.json',{cache:'no-cache'}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
-  DATA=d;events=(d.events||[]).map(function(e,i){e._i=i;return e;});
+
+fetch("data/events.json",{cache:"no-cache"}).then(function(r){if(!r.ok)throw new Error(r.status);return r.json();}).then(function(d){
+  DATA=d;
+  all=(d.events||[]).filter(function(e){return e&&e.d&&e.t;}).map(function(e,i){e._i=i;return e;});
+  all.sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:a._i-b._i;});
+  all.forEach(function(e,i){e.no=i+1;});
   shell();render();
 }).catch(function(){
-  app.innerHTML='<p class="empty">年表データを読み込めませんでした。<br>時間をおいてページを再読み込みしてください。</p>';
+  app.innerHTML='<p class="empty wrap"><span class="it">Could not load.</span>年表データを読み込めませんでした。時間をおいて再読み込みしてください。</p>';
 });
 })();
 </script>
