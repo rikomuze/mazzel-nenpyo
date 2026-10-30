@@ -621,6 +621,6 @@
   {"id": "v12", "d": "2025-08-18", "e": null, "k": ["MV"], "t": "「DANGER」MV公開", "img": ["images/2025-08-18-v12-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=AUhNm_ZR0L0"}]},
   {"id": "v13", "d": "2026-06-22", "e": null, "k": ["MV"], "t": "「So Strawberry」MV公開", "img": ["images/2026-06-22-v13-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=76lNhpUKrEc"}]},
   {"id": "v14", "d": "2026-10-19", "e": null, "k": ["MV"], "t": "「Touch」MV公開", "img": ["images/2026-10-19-v14-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=DN5JpXHDrLk"}]},
-  {"id": "f001", "d": "2022-10-30", "e": null, "k": ["記念日"], "t": "MAZZEL 結成\nオーディション「MISSIONx2」最終審査（大谷資料館）で8人が決定", "img": [], "src": [{"name": "Wikipedia", "url": "https://ja.wikipedia.org/wiki/MISSION%C3%972"}], "feature": true},
+  {"id": "f001", "d": "2022-10-30", "e": null, "k": ["記念日"], "t": "MAZZEL 結成\nオーディション「MISSIONx2」最終審査（大谷資料館）で8人が決定", "img": ["images/2022-10-30-f001.jpg"], "src": [{"name": "Wikipedia", "url": "https://ja.wikipedia.org/wiki/MISSION%C3%972"}], "feature": true},
   {"id": "f002", "d": "2026-10-30", "e": null, "k": ["記念日"], "t": "MAZZEL 結成4周年", "img": ["images/2026-10-30-f002.jpg"]}
 ]}
