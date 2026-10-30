@@ -1,0 +1,47 @@
+name: fetch-media
+on:
+  push:
+    paths: ['tools/jackets.txt','tools/fetch.txt','.github/workflows/fetch-media.yml']
+  workflow_dispatch:
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Jackets
+        run: |
+          mkdir -p incoming/jackets
+          while read -r name url; do
+            [ -z "$name" ] && continue
+            curl -fsSL -A "Mozilla/5.0" -o "incoming/jackets/$name.jpg" "$url" || echo "FAIL $name" >> incoming/jackets/_errors.txt
+          done < tools/jackets.txt
+      - name: Extra files
+        run: |
+          mkdir -p incoming/extra
+          if [ -f tools/fetch.txt ]; then
+            while read -r name url; do
+              [ -z "$name" ] && continue
+              curl -fsSL -A "Mozilla/5.0" -o "incoming/extra/$name" "$url" || echo "FAIL $name $url" >> incoming/extra/_errors.txt
+            done < tools/fetch.txt
+          fi
+      - name: YouTube channel list
+        run: |
+          pip install -q yt-dlp
+          mkdir -p incoming/youtube
+          yt-dlp --flat-playlist --print "%(id)s	%(title)s" "https://www.youtube.com/@MAZZEL_official/videos" > incoming/youtube/videos.tsv 2> incoming/youtube/_err.txt || true
+          grep -iE "music video|MV|Official" incoming/youtube/videos.tsv > incoming/youtube/mv.tsv || true
+          while IFS=$'\t' read -r id title; do
+            d=$(yt-dlp --skip-download --print "%(upload_date)s" "https://www.youtube.com/watch?v=$id" 2>>incoming/youtube/_err.txt || echo "")
+            printf "%s\t%s\t%s\n" "$id" "$d" "$title" >> incoming/youtube/mv_dated.tsv
+            curl -fsSL -o "incoming/youtube/$id.jpg" "https://i.ytimg.com/vi/$id/maxresdefault.jpg" || curl -fsSL -o "incoming/youtube/$id.jpg" "https://i.ytimg.com/vi/$id/hqdefault.jpg" || true
+          done < incoming/youtube/mv.tsv
+      - name: Commit
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git add incoming
+          git commit -m "fetch-media: ジャケットとMVサムネイルを取得（一時ファイル）" || exit 0
+          git pull --rebase
+          git push
