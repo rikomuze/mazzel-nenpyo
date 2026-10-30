@@ -58,7 +58,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .typ[aria-pressed="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--ink)}
 .typ .n{font-family:var(--f-mono);font-size:11px;color:var(--faint);margin-left:4px}
 .tools{display:flex;gap:18px;align-items:center;flex:none}
-.search{width:190px;max-width:100%;border:0;border-bottom:1px solid var(--rule);background:transparent;padding:4px 0;font-size:14px;border-radius:0}
+.search{width:230px;max-width:100%;border:0;border-bottom:1px solid var(--rule);background:transparent;padding:4px 0;font-size:14px;border-radius:0}
 .search::placeholder{color:var(--faint)}
 .order,.stog{background:none;border:0;padding:0;font-family:var(--f-didone);font-style:italic;font-size:15px;cursor:pointer;white-space:nowrap}
 .stog{display:none}
@@ -100,6 +100,7 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .plate figcaption{display:flex;flex-direction:column;gap:2px;padding-top:8px}
 .pl{word-break:auto-phrase;font-family:var(--f-mincho);font-weight:700;font-size:15px;line-height:1.45;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
 .pt{font-family:var(--f-didone);font-style:italic;font-size:13px;line-height:1.4;color:#4A4C53;overflow-wrap:anywhere;display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:1;overflow:hidden}
+.mem{font-size:10px;font-weight:700;letter-spacing:.16em;color:var(--blue)}
 .multi{position:absolute;right:8px;bottom:8px;background:rgba(255,255,255,.92);font-family:var(--f-mono);font-size:11px;padding:1px 6px;color:var(--ink)}
 
 /* numbered list */
@@ -166,8 +167,8 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 <div id="overlay"></div>
 <script>
 (function(){
-var KINDS=["ライブ","出演","リリース","MV","配信","雑誌","SNS","その他"];
-var KEN={"ライブ":"Live","出演":"TV","リリース":"Release","MV":"MV","配信":"Stream","雑誌":"Print","SNS":"SNS","その他":"Other"};
+var KINDS=["ライブ","出演","リリース","MV","配信","雑誌","記録","記念日","SNS","その他"];
+var KEN={"ライブ":"Live","出演":"TV","リリース":"Release","MV":"MV","配信":"Stream","雑誌":"Print","記録":"Record","記念日":"Anniversary","SNS":"SNS","その他":"Other"};
 var NONE="未分類";
 var MONTHS=["January","February","March","April","May","June","July","August","September","October","November","December"];
 var DOW=["Sun.","Mon.","Tue.","Wed.","Thu.","Fri.","Sat."];
@@ -181,18 +182,19 @@ function pad(n,w){n=String(n);while(n.length<(w||2))n="0"+n;return n;}
 function today(){var d=new Date();return d.getFullYear()+"-"+pad(d.getMonth()+1)+"-"+pad(d.getDate());}
 function dow(s){var p=s.split("-");return DOW[new Date(Date.UTC(+p[0],+p[1]-1,+p[2])).getUTCDay()];}
 function kindsOf(e){return e.k&&e.k.length?e.k:[NONE];}
-function kindLabel(e){return kindsOf(e).map(function(k){return KEN[k]||"Other";}).join(" · ");}
+function kindLabel(e){return kindsOf(e).map(function(k){return KEN[k]||"Other";}).join(" · ")+(e.m&&e.m.length?" — "+e.m.join(" · "):"");}
+function memTag(e){return e.m&&e.m.length?'<span class="mem">'+esc(e.m.join(" · "))+'</span>':"";}
 function split(t){var l=String(t).split(/\n+/).map(function(x){return x.trim();}).filter(Boolean);return{head:l[0]||"",rest:l.slice(1).join(" / ")};}
 function thumb(s){return /^images\/[^\/]+$/.test(s)?s.replace(/^images\//,"images/thumb/"):s;}
 function links(e){return(e.src||[]).filter(function(x){return x&&/^https?:\/\//.test(x.url);});}
 function srcMark(e){return links(e).slice(0,1).map(function(x){return'<a class="src" href="'+esc(x.url)+'" target="_blank" rel="noopener" aria-label="出典（'+esc(x.name||"リンク")+'）を開く" title="'+esc(x.name||"出典")+'">↗</a>';}).join("");}
 var BYID={},SIZES={};
 function ratio(src){var s=SIZES[src];return s?Math.round(s[0]/s[1]*1000)/1000:1.5;}
-window.fixRatio=function(img){var f=img.closest("[data-r]");if(!f||SIZES[img.dataset.full])return;var r=img.naturalWidth/img.naturalHeight;if(r){f.style.setProperty("--r",Math.round(r*1000)/1000);if(f.classList.contains("lead"))f.classList.toggle("tall",r<1);}};
+window.fixRatio=function(img){var f=img.closest("[data-r]");if(!f||SIZES[img.dataset.full])return;var r=img.naturalWidth/img.naturalHeight;if(r){f.style.setProperty("--r",Math.round(r*1000)/1000);if(f.classList.contains("lead"))f.classList.toggle("tall",r<=1.05);}};
 function imgTag(e,alt){return'<img loading="lazy" alt="'+esc(alt)+'" src="'+esc(thumb(e.img[0]))+'" data-full="'+esc(e.img[0])+'" onerror="if(this.src.indexOf(\'/thumb/\')>-1)this.src=this.dataset.full" onload="fixRatio(this)">'+(e.img.length>1?'<span class="multi">1/'+e.img.length+'</span>':'');}
 function match(e){
   if(st.kinds.length&&!kindsOf(e).some(function(k){return st.kinds.indexOf(k)>=0;}))return false;
-  if(st.q){var q=st.q.toLowerCase();if((e.t+" "+e.d.replace(/-/g,".")).toLowerCase().indexOf(q)<0)return false;}
+  if(st.q){var q=st.q.toLowerCase();if((e.t+" "+e.d.replace(/-/g,".")+" "+(e.m||[]).join(" ")).toLowerCase().indexOf(q)<0)return false;}
   return true;
 }
 /* the month's lead: a photo marked feature, otherwise the most significant one (release, own show, MV, other live) */
@@ -206,6 +208,7 @@ function leadOf(photos){
     if(k.indexOf("リリース")>=0)s=5;
     else if(k.indexOf("ライブ")>=0&&/MAZZEL/.test(e.t))s=4;
     else if(k.indexOf("MV")>=0)s=3;
+    else if(k.indexOf("記録")>=0)s=0.5;
     else if(k.indexOf("ライブ")>=0)s=2.5;
     else if(k.indexOf("雑誌")>=0)s=1.5;
     if(s>bs){bs=s;best=e;}
@@ -226,7 +229,7 @@ function shell(){
   YEARS.map(function(y){return'<button type="button" class="ix" data-y="'+y+'"><span class="yr">'+y+'</span><span class="dots"></span><span class="no">'+pad(years[y][0],3)+'–'+pad(years[y][1],3)+'</span></button>';}).join("")+
   '</nav></header></div>'+
   '<div class="bar" id="bar"><div class="wrap"><div class="types" id="types" role="group" aria-label="種別"></div>'+
-  '<div class="tools"><input id="q" class="search" type="search" placeholder="番組名・会場で検索" aria-label="検索"><button type="button" class="stog" id="stog" aria-expanded="false" aria-controls="q">Search</button><button type="button" class="order" id="order"></button></div></div></div>'+
+  '<div class="tools"><input id="q" class="search" type="search" placeholder="番組名・会場・メンバーで検索" aria-label="検索"><button type="button" class="stog" id="stog" aria-expanded="false" aria-controls="q">Search</button><button type="button" class="order" id="order"></button></div></div></div>'+
   '<main class="wrap" id="list"></main>'+
   '<footer class="wrap foot"><span>ファンが個人でまとめた非公式の年表です。内容の誤りや追加情報があればお知らせください。</span><span class="it" style="font-size:13px">Last updated '+esc((DATA.updated||"").replace(/-/g,"."))+'</span></footer>';
   document.querySelector(".contents").addEventListener("click",function(e){
@@ -292,7 +295,7 @@ function monthHTML(y,m,t){
   var h='<div class="mon"><div class="mlabel"><span class="mname">'+name+'</span><span class="mcount">'+y+' · '+m.items.length+(m.items.length===1?' entry':' entries')+'</span></div><div class="mbody">';
   if(lead){
     var s=split(lead.t),r=ratio(lead.img[0]);
-    h+='<figure class="lead'+(r<1?' tall':'')+'" data-r style="--r:'+r+'"><button type="button" class="img" data-ev="'+esc(lead.id)+'" aria-label="写真を拡大">'+imgTag(lead,s.head)+'</button>'+
+    h+='<figure class="lead'+(r<=1.05?' tall':'')+'" data-r style="--r:'+r+'"><button type="button" class="img" data-ev="'+esc(lead.id)+'" aria-label="写真を拡大">'+imgTag(lead,s.head)+'</button>'+
       '<figcaption class="deck"><span class="kind">'+esc(kindLabel(lead))+upcoming(lead,t)+'</span><h3>'+esc(s.head)+'</h3>'+(s.rest?'<span class="venue">'+esc(s.rest)+'</span>':'')+
       '<div class="meta"><span class="no">No.'+pad(lead.no,3)+'</span><span class="it">'+dow(lead.d)+' '+(+lead.d.slice(8,10))+' '+name+' '+y+'</span>'+srcMark(lead)+'</div></figcaption></figure>';
   }
@@ -300,7 +303,7 @@ function monthHTML(y,m,t){
     h+='<div class="plates'+(others.length<=2?' few':'')+'">'+others.map(function(e){
       var r=ratio(e.img[0]),s=split(e.t);
       return'<figure class="plate" data-r style="--r:'+r+'"><button type="button" class="img" data-ev="'+esc(e.id)+'" aria-label="写真を拡大">'+imgTag(e,s.head)+'</button>'+
-        '<figcaption><span class="no">No.'+pad(e.no,3)+' — '+dow(e.d)+' '+(+e.d.slice(8,10))+upcoming(e,t)+'</span><span class="pl">'+esc(s.head)+'</span>'+(s.rest?'<span class="pt">'+esc(s.rest)+'</span>':'')+'</figcaption></figure>';
+        '<figcaption><span class="no">No.'+pad(e.no,3)+' — '+dow(e.d)+' '+(+e.d.slice(8,10))+upcoming(e,t)+'</span>'+memTag(e)+'<span class="pl">'+esc(s.head)+'</span>'+(s.rest?'<span class="pt">'+esc(s.rest)+'</span>':'')+'</figcaption></figure>';
     }).join("")+'</div>';
   }
   if(rest.length){
