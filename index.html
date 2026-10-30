@@ -457,7 +457,7 @@ function measure(){var b=document.getElementById("bar");if(b)document.documentEl
 /* ---------- on this day ---------- */
 function onThisDay(){
   var t=today(),md=t.slice(5),y=+t.slice(0,4);
-  var hits=all.filter(function(e){return e.d.slice(5)===md&&e.d<t;}).reverse();
+  var hits=all.filter(function(e){return e.d.slice(5)===md&&e.d<=t;}).reverse();
   var label=(+md.slice(0,2))+"月"+(+md.slice(3))+"日";
   var dd=daysSinceDebut();
   var h='<div class="otd-h"><span class="sc">On this day</span><span class="otd-date">'+MONTHS[+md.slice(0,2)-1]+" "+(+md.slice(3))+'</span><span class="otd-day">デビューから '+fmtN(dd)+' 日目</span></div><div style="display:flex;flex-direction:column;gap:14px;min-width:0">';
@@ -465,9 +465,9 @@ function onThisDay(){
     h+='<ul class="otd-list">'+hits.slice(0,5).map(function(e){
       var s=split(e.t),ago=y-+e.d.slice(0,4);
       return'<li><button type="button" class="otd-row" data-otd="'+esc(e.id)+'">'+(e.img&&e.img.length?'<img loading="lazy" alt="" src="'+esc(thumb(e.img[0]))+'">':'<span class="ph">M</span>')+
-        '<span class="otd-ago">'+ago+' year'+(ago>1?'s':'')+' ago<small>'+e.d.slice(0,4)+'</small></span><span class="otd-t">'+esc(s.head)+(s.rest?' <span class="lv">'+esc(s.rest)+'</span>':'')+'</span></button></li>';
+        '<span class="otd-ago">'+(ago?ago+' year'+(ago>1?'s':'')+' ago':'Today')+'<small>'+e.d.slice(0,4)+'</small></span><span class="otd-t">'+esc(s.head)+(s.rest?' <span class="lv">'+esc(s.rest)+'</span>':'')+'</span></button></li>';
     }).join("")+'</ul>';
-    var txt="今日"+label+"のMAZZEL\n"+hits.slice(0,3).map(function(e){return e.d.slice(0,4)+"年："+clip(split(e.t).head,40);}).join("\n")+"\n\nデビューから"+fmtN(dd)+"日目\n#MAZZEL #MAZZEL年表";
+    var txt="今日"+label+"のMAZZEL\n"+hits.slice(0,4).map(function(e){return (e.d===t?"今日：":e.d.slice(0,4)+"年：")+clip(split(e.t).head,40);}).join("\n")+"\n\nデビューから"+fmtN(dd)+"日目\n#MAZZEL #MAZZEL年表";
     h+=shareRow(txt,BASE,"Xでシェア");
   }else{
     h+='<p class="otd-none">'+label+'の出来事はまだ記録されていません。</p>';

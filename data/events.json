@@ -338,7 +338,7 @@
   {"id": "e338", "d": "2025-10-22", "e": null, "k": ["ライブ"], "t": "「めざましライブ2025」", "img": ["images/2025-10-22-e338.jpg"]},
   {"id": "e339", "d": "2025-10-22", "e": null, "k": ["出演"], "t": "TBS「よるのブランチ」", "img": ["images/2025-10-22-e339.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/4733/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/1981186483039154573"}]},
   {"id": "e621", "d": "2025-10-29", "e": null, "k": ["出演"], "t": "日本テレビ ドラマ「セラピーゲーム」\nNAOYA W主演・放送開始 / ED「Only You」", "img": ["images/2025-10-29-e621.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/news/4685/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/1983520366585864364"}], "m": ["NAOYA"]},
-  {"id": "e340", "d": "2025-10-31", "e": null, "k": ["記念日"], "t": "デビュー3周年", "img": ["images/2025-10-31-e340.jpg"]},
+  {"id": "e340", "d": "2025-10-30", "e": null, "k": ["記念日"], "t": "MAZZEL 結成3周年", "img": ["images/2025-10-31-e340.jpg"], "src": [{"name": "ELLE Japan（X）", "url": "https://x.com/ellejapan/status/1983901662541705306"}]},
   {"id": "e342", "d": "2025-11-02", "e": null, "k": ["ライブ"], "t": "「宗像フェス2025」", "img": ["images/2025-11-02-e342.jpg"]},
   {"id": "e343", "d": "2025-11-03", "e": null, "k": ["MV"], "t": "「Only You」MV公開", "img": ["images/2025-11-03-e343-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=pVLkSsnde9U"}]},
   {"id": "e344", "d": "2025-11-03", "e": null, "k": ["配信"], "t": "「Only You」公開前生配信", "img": ["images/2025-11-03-e344.jpg"]},
@@ -620,5 +620,7 @@
   {"id": "v11", "d": "2025-04-07", "e": null, "k": ["MV"], "t": "「King Kila Game」MV公開", "img": ["images/2025-04-07-v11-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=jUlAbq1lfdo"}]},
   {"id": "v12", "d": "2025-08-18", "e": null, "k": ["MV"], "t": "「DANGER」MV公開", "img": ["images/2025-08-18-v12-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=AUhNm_ZR0L0"}]},
   {"id": "v13", "d": "2026-06-22", "e": null, "k": ["MV"], "t": "「So Strawberry」MV公開", "img": ["images/2026-06-22-v13-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=76lNhpUKrEc"}]},
-  {"id": "v14", "d": "2026-10-19", "e": null, "k": ["MV"], "t": "「Touch」MV公開", "img": ["images/2026-10-19-v14-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=DN5JpXHDrLk"}]}
+  {"id": "v14", "d": "2026-10-19", "e": null, "k": ["MV"], "t": "「Touch」MV公開", "img": ["images/2026-10-19-v14-mv.jpg"], "src": [{"name": "YouTube", "url": "https://www.youtube.com/watch?v=DN5JpXHDrLk"}]},
+  {"id": "f001", "d": "2022-10-30", "e": null, "k": ["記念日"], "t": "MAZZEL 結成\nオーディション「MISSIONx2」最終審査（大谷資料館）で8人が決定", "img": [], "src": [{"name": "Wikipedia", "url": "https://ja.wikipedia.org/wiki/MISSION%C3%972"}], "feature": true},
+  {"id": "f002", "d": "2026-10-30", "e": null, "k": ["記念日"], "t": "MAZZEL 結成4周年", "img": []}
 ]}
