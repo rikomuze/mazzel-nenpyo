@@ -1,4 +1,4 @@
-{"updated":"2026-10-27","events":[
+{"updated":"2026-10-29","events":[
   {"id": "e003", "d": "2023-04-12", "e": null, "k": ["出演"], "t": "M-ON! SPECIAL 「MAZZEL」 ～MISSIONx2～", "img": [], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/74/"}]},
   {"id": "e001", "d": "2023-04-15", "e": null, "k": ["出演"], "t": "NHK「Venue101」", "img": ["images/2023-04-15-e001.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/76/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/1644709673650749441"}]},
   {"id": "e004", "d": "2023-05-12", "e": null, "k": ["出演"], "t": "日本テレビ「バズリズム02」", "img": ["images/2023-05-12-e004.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/141/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/1657071638855155715"}]},
@@ -494,9 +494,9 @@
   {"id": "e531", "d": "2026-10-26", "e": null, "k": ["出演"], "t": "日本テレビ「有吉ゼミ」", "img": ["images/2026-10-26-e531.jpg", "images/2026-10-26-e531-2.jpg", "images/2026-10-26-e531-3.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/5712/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2114691679898964398"}]},
   {"id": "e532", "d": "2026-10-27", "e": null, "k": ["出演"], "t": "NHK「うたコン」", "img": ["images/2026-10-27-e532.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/5714/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2115050290110177733"}]},
   {"id": "e528", "d": "2026-10-28", "e": null, "k": ["出演"], "t": "ミュージック・ジャパンTV「MAZZEL スペシャル」", "img": [], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/5703/"}]},
-  {"id": "e534", "d": "2026-10-28", "e": null, "k": ["出演"], "t": "日本テレビ「ヒルナンデス！」", "img": [], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/5728/"}]},
-  {"id": "e536", "d": "2026-10-28", "e": null, "k": ["出演"], "t": "日本テレビ「DayDay.」", "img": ["images/2026-10-28-e536.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/5732/"}]},
-  {"id": "e539", "d": "2026-10-29", "e": null, "k": ["ライブ"], "t": "「MTV VMAJ 2026」", "img": ["images/2026-10-29-e539.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/live/5544/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2090635014279188885"}]},
+  {"id": "e534", "d": "2026-10-28", "e": null, "k": ["出演"], "t": "日本テレビ「ヒルナンデス！」", "img": ["images/2026-10-28-e534.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/5728/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2115314759998558645"}]},
+  {"id": "e536", "d": "2026-10-28", "e": null, "k": ["出演"], "t": "日本テレビ「DayDay.」", "img": ["images/2026-10-28-e536.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/media/5732/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2115275223377510761"}]},
+  {"id": "e539", "d": "2026-10-29", "e": null, "k": ["ライブ"], "t": "「MTV VMAJ 2026」", "img": ["images/2026-10-29-e539.jpg"], "src": [{"name": "公式", "url": "https://mazzel.tokyo/live/5544/"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2090635014279188885"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2115757716484599810"}]},
   {"id": "e540", "d": "2026-11-02", "e": null, "k": ["ライブ"], "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\nとうほう・みんなの文化センター", "img": []},
   {"id": "e541", "d": "2026-11-03", "e": null, "k": ["ライブ"], "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n東京エレクトロンホール宮城", "img": []},
   {"id": "e542", "d": "2026-11-07", "e": null, "k": ["ライブ"], "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n新潟テルサ", "img": []},
@@ -532,5 +532,9 @@
   {"id": "e572", "d": "2026-10-26", "e": null, "k": ["その他"], "t": "BANQUET BANG 10 MILLION VIEWS!!!!!!!!", "img": ["images/2026-10-26-e572.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2114713732417016279"}]},
   {"id": "e573", "d": "2026-10-26", "e": null, "k": ["雑誌"], "t": "「ディズニーファン」12月号\nHAYATO掲載", "img": ["images/2026-10-26-e573.jpg", "images/2026-10-26-e573-2.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2114550058515656915"}]},
   {"id": "e574", "d": "2027-01-30", "e": null, "k": ["ライブ"], "t": "「FUKUOKA MUSIC FES.2027」\nみずほPayPayドーム福岡", "img": ["images/2027-01-30-e574.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2115005582927110561"}]},
-  {"id": "e575", "d": "2026-10-31", "e": null, "k": ["配信"], "t": "FOD「有野屋書店 2号店」\nEIKI（副店長・レギュラー） / 第2回ゲスト RYUKI / 12:00配信開始", "img": ["images/2026-10-31-e575.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2114533355597508669"}]}
+  {"id": "e575", "d": "2026-10-31", "e": null, "k": ["配信"], "t": "FOD「有野屋書店 2号店」\nEIKI（副店長・レギュラー） / 第2回ゲスト RYUKI / 12:00配信開始", "img": ["images/2026-10-31-e575.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2114533355597508669"}]},
+  {"id": "e576", "d": "2026-10-28", "e": null, "k": ["雑誌"], "t": "「NYLON JAPAN」12月号特別版\nKAIRYU・HAYATO 表紙&掲載", "img": ["images/2026-10-28-e576.jpg", "images/2026-10-28-e576-2.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2115313486834356596"}]},
+  {"id": "e577", "d": "2026-10-28", "e": null, "k": ["その他"], "t": "Touch MV 3,750,000回再生突破\nSEITO", "img": ["images/2026-10-28-e577.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2115420916058649066"}]},
+  {"id": "e578", "d": "2026-10-29", "e": null, "k": ["その他"], "t": "Touch MV 4,000,000回再生突破\nRAN", "img": ["images/2026-10-29-e578.jpg"], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2115637701630476496"}]},
+  {"id": "e579", "d": "2026-10-28", "e": null, "k": ["その他"], "t": "Billboard JAPAN 総合ソング・チャート“JAPAN Hot 100” 1位\nTouch", "img": [], "src": [{"name": "公式X", "url": "https://x.com/mazzel_official/status/2115298778479825072"}, {"name": "公式X", "url": "https://x.com/mazzel_official/status/2115694674849771804"}]}
 ]}
