@@ -10606,6 +10606,42 @@
       "img": [
         "images/2026-10-30-f002.jpg"
       ]
+    },
+    {
+      "id": "t01",
+      "d": "2026-03-20",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "YouTube「THE FIRST TAKE」\n「Only You」",
+      "img": [
+        "images/2026-03-20-t01-ftt.jpg"
+      ],
+      "src": [
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/watch?v=epdz8BeOR7I"
+        }
+      ]
+    },
+    {
+      "id": "t02",
+      "d": "2026-04-01",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "YouTube「THE FIRST TAKE」\n「Get Up And Dance」",
+      "img": [
+        "images/2026-04-01-t02-ftt.jpg"
+      ],
+      "src": [
+        {
+          "name": "YouTube",
+          "url": "https://www.youtube.com/watch?v=zGTqYHKPn3s"
+        }
+      ]
     }
   ]
 }
