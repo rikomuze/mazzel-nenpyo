@@ -107,6 +107,12 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
 .tbtn b{font-family:var(--f-mono);font-style:normal;font-size:11px;background:var(--ink);color:var(--paper);border-radius:9px;padding:1px 6px;margin-left:4px;vertical-align:1px}
 .ctx{display:none}
 .active{display:none}
+.fbanner{display:flex;flex-wrap:wrap;align-items:center;gap:12px 18px;margin-top:22px;padding:14px 16px;background:#EEF0FB}
+.fb-l{flex:1;min-width:0;display:flex;flex-direction:column;gap:2px}
+.fb-l div{font-size:14px;overflow-wrap:anywhere}
+.fb-l b{font-family:var(--f-mono);font-size:20px;margin-right:2px}
+.clearbtn{display:inline-flex;align-items:center;gap:6px;min-height:42px;padding:8px 16px;border:1.5px solid var(--ink);background:var(--paper);font-weight:700;font-size:14px}
+.clearbtn .ico{width:16px;height:16px}
 
 /* year opener */
 .year{scroll-margin-top:var(--barh,56px)}
@@ -241,13 +247,20 @@ body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset
   .types,.tools{display:none}
   .ctx{display:flex;align-items:baseline;gap:8px;flex:1;min-width:0;font-family:var(--f-didone);font-style:italic;font-size:19px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .ctx small{font-family:var(--f-mono);font-style:normal;font-size:12px;color:var(--muted)}
-  .active{display:inline-flex;align-items:center;gap:6px;max-width:55%;min-height:32px;padding:4px 10px;border:1px solid var(--ink);background:var(--ink);color:var(--paper);font-size:12px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar.filtered{background:#EEF0FB}
+  .ctx .fs{font-family:var(--f-sans);font-style:normal;font-size:13px;font-weight:700;letter-spacing:.04em}
+  .active{display:inline-flex;align-items:center;gap:4px;flex:none;min-height:34px;padding:4px 12px;border:1.5px solid var(--ink);background:var(--paper);color:var(--ink);font-size:13px;font-weight:700}
+  .active .ico{width:14px;height:14px}
   .active[hidden]{display:none}
-  .dock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--paper);border-top:1px solid var(--rule);
+  .dock{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));position:fixed;left:0;right:0;bottom:0;z-index:20;background:var(--ink);color:#fff;box-shadow:0 -6px 20px rgba(0,0,0,.18);
     padding:0 max(8px,env(safe-area-inset-right,0px)) env(safe-area-inset-bottom,0px) max(8px,env(safe-area-inset-left,0px))}
-  .dock button{height:var(--dockh);background:none;border:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:700;letter-spacing:.06em;position:relative}
+  .dock button{height:var(--dockh);background:none;border:0;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;font-size:11px;font-weight:700;letter-spacing:.06em;position:relative}
   .dock .ico{width:22px;height:22px}
-  .dock .badge{position:absolute;top:9px;left:calc(50% + 6px);min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:var(--blue);color:#fff;font-family:var(--f-mono);font-size:10px;line-height:16px}
+  .dock .badge{position:absolute;top:9px;left:calc(50% + 6px);min-width:16px;height:16px;padding:0 4px;border-radius:8px;background:#fff;color:var(--ink);font-family:var(--f-mono);font-size:10px;font-weight:700;line-height:16px}
+  .dock .on{color:#AEB8FF}
+  .coach{position:fixed;left:max(16px,env(safe-area-inset-left,0px));right:max(16px,env(safe-area-inset-right,0px));bottom:calc(var(--dockh) + 14px + env(safe-area-inset-bottom,0px));z-index:21;background:var(--blue);color:#fff;padding:12px 12px 12px 16px;display:flex;align-items:center;gap:12px;font-size:14px;line-height:1.5;box-shadow:0 8px 24px rgba(0,0,0,.2);animation:up .3s ease-out}
+  .coach::after{content:"";position:absolute;bottom:-8px;left:calc(37.5% - 8px);border:8px solid transparent;border-bottom:0;border-top-color:var(--blue)}
+  .coach button{flex:none;min-height:36px;padding:6px 14px;border:1px solid #fff;background:transparent;color:#fff;font-weight:700;font-size:13px}
   .scrim{align-items:flex-end;padding:0}
   .sheet{width:100%;max-height:86vh;box-shadow:0 -10px 40px rgba(0,0,0,.18);animation:up .22s ease-out}
   @keyframes up{from{transform:translateY(24px);opacity:.6}to{transform:none;opacity:1}}
@@ -375,7 +388,10 @@ function copy(text){
 }
 var toastT;
 function toast(msg){var o=document.querySelector(".toast");if(o)o.remove();var t=document.createElement("div");t.className="toast";t.setAttribute("role","status");t.textContent=msg;document.body.appendChild(t);clearTimeout(toastT);toastT=setTimeout(function(){t.remove();},2200);}
-document.addEventListener("click",function(e){var b=e.target.closest("[data-copy]");if(b){e.preventDefault();copy(b.getAttribute("data-copy"));}});
+document.addEventListener("click",function(e){
+  var b=e.target.closest("[data-copy]");if(b){e.preventDefault();copy(b.getAttribute("data-copy"));return;}
+  var c=e.target.closest("[data-clear]");if(c){clearFilters();update();scrollToList();toast("すべての出来事を表示しています");}
+});
 
 /* ---------- lead choice ---------- */
 function leadOf(photos){
@@ -438,7 +454,7 @@ function shell(){
   document.getElementById("qclr").addEventListener("click",function(){q.value="";st.q="";update();q.focus();});
   document.getElementById("order").addEventListener("click",function(){st.order=st.order==="asc"?"desc":"asc";try{localStorage.setItem("mz-order",st.order);}catch(e){}update();});
   document.getElementById("fbtn").addEventListener("click",openFilter);
-  document.getElementById("active").addEventListener("click",function(){clearFilters();update();toast("絞り込みを解除しました");});
+  document.getElementById("active").addEventListener("click",function(){clearFilters();update();toast("すべての出来事を表示しています");});
   document.querySelector(".dock").addEventListener("click",function(e){
     var b=e.target.closest("[data-dock]");if(!b)return;var a=b.dataset.dock;
     if(a==="toc")openTOC();else if(a==="search")openSearch();else if(a==="filter")openFilter();else window.scrollTo({top:0});
@@ -489,10 +505,13 @@ function render(){
   var na=nActive(),fb=document.getElementById("fbadge"),db=document.getElementById("dbadge"),ac=document.getElementById("active");
   fb.hidden=db.hidden=!(st.mems.length||st.kinds.length);fb.textContent=db.textContent=st.mems.length+st.kinds.length;
   if(st.q){db.hidden=false;db.textContent=na;}
-  ac.hidden=!na;ac.innerHTML=na?esc(activeLabel())+' ×':'';ac.setAttribute("aria-label","絞り込みを解除："+activeLabel());
+  ac.hidden=!na;ac.innerHTML=ico("x")+'解除';ac.setAttribute("aria-label","絞り込みを解除："+activeLabel());
+  document.getElementById("bar").classList.toggle("filtered",!!na);
+  var fdock=document.querySelector('[data-dock="filter"]'),sdock=document.querySelector('[data-dock="search"]');
+  if(fdock)fdock.classList.toggle("on",!!(st.mems.length||st.kinds.length));if(sdock)sdock.classList.toggle("on",!!st.q);
   var vis=all.filter(match);if(st.order==="desc")vis.reverse();VIS=vis;
   var list=document.getElementById("list");
-  if(!vis.length){list.innerHTML='<p class="empty"><span class="it">Nothing found.</span>条件に合う出来事がありません。検索語や絞り込みを変えてみてください。</p>';setCtx(na?"0件":"");measure();return;}
+  if(!vis.length){list.innerHTML=bannerHTML(0)+'<p class="empty"><span class="it">Nothing found.</span>条件に合う出来事がありません。検索語や絞り込みを変えてみてください。</p>';setCtx('<span class="fs">絞り込み中</span><small>0件</small>');measure();return;}
   var groups=[],gy=null,gm=null;
   vis.forEach(function(e){
     var y=e.d.slice(0,4),m=e.d.slice(5,7);
@@ -501,7 +520,7 @@ function render(){
     gm.items.push(e);
   });
   var t=today(),h="";
-  if(na)h+='<p class="sc" style="margin:22px 0 0">'+vis.length+' entries · '+esc(activeLabel())+'</p>';
+  if(na)h+=bannerHTML(vis.length);
   groups.forEach(function(g){
     var n=0,kc={};
     g.months.forEach(function(m){n+=m.items.length;m.items.forEach(function(e){var k=kindsOf(e)[0];kc[k]=(kc[k]||0)+1;});});
@@ -512,6 +531,9 @@ function render(){
     h+='</section>';
   });
   list.innerHTML=h;measure();watchCtx();
+}
+function bannerHTML(n){
+  return'<div class="fbanner" role="status"><div class="fb-l"><span class="sc">絞り込み中</span><div><b>'+n+'</b>件 · '+esc(activeLabel())+'</div></div><button type="button" class="clearbtn" data-clear>'+ico("x")+'すべて表示に戻す</button></div>';
 }
 function upcoming(e,t){return e.d>t?' · <span class="up">Upcoming</span>':'';}
 function monthHTML(y,m,t){
@@ -550,6 +572,7 @@ var ctxObs=null;
 function setCtx(html){var c=document.getElementById("ctx");if(c)c.innerHTML=html;}
 function watchCtx(){
   if(ctxObs)ctxObs.disconnect();
+  if(nActive()){setCtx('<span class="fs">絞り込み中</span><small>'+VIS.length+'件</small>');return;}
   if(!("IntersectionObserver" in window))return;
   var seen={};
   ctxObs=new IntersectionObserver(function(ents){
@@ -620,7 +643,7 @@ function openFilter(){
     '<div class="grp"><span class="sc">種別</span><div class="chips" data-g="k">'+chips(st.kinds,ks,"",kc)+'</div></div>'+
     '<div class="grp"><span class="sc">並び順</span><div class="chips" data-g="o"><button type="button" class="chip" data-v="asc" aria-pressed="'+(st.order==="asc")+'">古い順</button><button type="button" class="chip" data-v="desc" aria-pressed="'+(st.order==="desc")+'">新しい順</button></div></div>'+
     '<div class="grp"><span class="sc">この条件をシェア</span><div id="fshare"></div></div>';
-  var foot='<button type="button" class="btn ghost" id="freset">リセット</button>'+countHTML()+'<button type="button" class="btn" id="fgo">結果を見る</button>';
+  var foot='<button type="button" class="btn ghost" id="freset">すべて解除</button>'+countHTML()+'<button type="button" class="btn" id="fgo">結果を見る</button>';
   openSheet("絞り込み","Filter",body,foot,function(sh,close){
     function refresh(){
       update();sh.querySelector("#cnt").textContent=VIS.length;
@@ -637,7 +660,7 @@ function openFilter(){
       if(g==="m")toggle(st.mems,v);else if(g==="k")toggle(st.kinds,v);else{st.order=v;try{localStorage.setItem("mz-order",v);}catch(e){}}
       refresh();
     });
-    sh.querySelector("#freset").addEventListener("click",function(){st.mems=[];st.kinds=[];refresh();});
+    sh.querySelector("#freset").addEventListener("click",function(){clearFilters();refresh();});
     sh.querySelector("#fgo").addEventListener("click",function(){close();scrollToList();});
     refresh();
   });
@@ -688,6 +711,21 @@ function lightbox(e,i){
   document.addEventListener("keydown",k);
 }
 
+/* first-visit hint pointing at the bottom dock */
+function coach(){
+  if(!isPhone())return;
+  try{if(localStorage.getItem("mz-coach"))return;}catch(e){return;}
+  setTimeout(function(){
+    var c=document.createElement("div");c.className="coach";c.setAttribute("role","status");
+    c.innerHTML='<span>検索・絞り込み・目次は、画面下のメニューから使えます。</span><button type="button">OK</button>';
+    document.body.appendChild(c);
+    function done(){c.remove();try{localStorage.setItem("mz-coach","1");}catch(e){}}
+    c.querySelector("button").addEventListener("click",done);
+    document.querySelector(".dock").addEventListener("click",done,{once:true});
+    setTimeout(function(){if(c.isConnected)c.remove();},9000);
+  },1200);
+}
+
 /* ---------- boot ---------- */
 readURL();
 Promise.all([
@@ -698,7 +736,7 @@ Promise.all([
   all=(d.events||[]).filter(function(e){return e&&e.d&&e.t;}).map(function(e,i){e._i=i;return e;});
   all.sort(function(a,b){return a.d<b.d?-1:a.d>b.d?1:a._i-b._i;});
   all.forEach(function(e,i){e.no=i+1;BYID[e.id]=e;});
-  shell();render();goHash(false);
+  shell();render();goHash(false);coach();
 }).catch(function(){
   app.innerHTML='<p class="empty wrap"><span class="it">Could not load.</span>年表データを読み込めませんでした。時間をおいて再読み込みしてください。</p>';
 });
