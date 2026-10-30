@@ -507,7 +507,7 @@ function render(){
     g.months.forEach(function(m){n+=m.items.length;m.items.forEach(function(e){var k=kindsOf(e)[0];kc[k]=(kc[k]||0)+1;});});
     var br=["ライブ","出演","リリース","MV"].filter(function(k){return kc[k];}).map(function(k){return KEN[k]+" "+kc[k];}).join(" · ");
     var vol=YEARS.indexOf(g.y)+1;
-    h+='<section class="year" id="y'+g.y+'"><header class="yhead"><span class="ynum">'+g.y+'</span><div class="ymeta"><span class="sc">Vol. '+pad(vol)+' · '+n+' entries</span>'+(br?'<span class="ybreak">'+esc(br)+'</span>':'')+'</div></header>';
+    h+='<section class="year" id="y'+g.y+'"><header class="yhead"><span class="ynum">'+g.y+'</span><div class="ymeta"><span class="sc">Vol. '+pad(vol)+' · '+n+(n===1?' entry':' entries')+'</span>'+(br?'<span class="ybreak">'+esc(br)+'</span>':'')+'</div></header>';
     g.months.forEach(function(m){h+=monthHTML(g.y,m,t);});
     h+='</section>';
   });
