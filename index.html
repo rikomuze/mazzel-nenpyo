@@ -370,7 +370,7 @@ function syncURL(){try{history.replaceState(null,"",filterURL()+(location.hash||
 function clearFilters(){st.q="";st.kinds=[];st.mems=[];var q=document.getElementById("q");if(q)q.value="";}
 
 /* ---------- share ---------- */
-function intent(text,url){return"https://x.com/intent/post?text="+encodeURIComponent(text)+"&url="+encodeURIComponent(url);}
+function intent(text,url){return"https://twitter.com/intent/tweet?text="+encodeURIComponent(text)+"&url="+encodeURIComponent(url);}
 function clip(s,n){return s.length>n?s.slice(0,n-1)+"…":s;}
 function entryText(e){
   var s=split(e.t),body=clip(s.head+(s.rest?" "+s.rest:""),110);
@@ -378,7 +378,7 @@ function entryText(e){
 }
 function entryURL(e){return BASE+"#"+e.id;}
 function shareRow(text,url,label){
-  return'<div class="acts"><a class="sharebtn" href="'+esc(intent(text,url))+'" target="_blank" rel="noopener">'+ico("xlogo")+(label||"Xでシェア")+'</a>'+
+  return'<div class="acts"><a class="sharebtn" href="'+esc(intent(text,url))+'" target="_blank" rel="noopener" data-sharetext="'+esc(text)+'" data-shareurl="'+esc(url)+'">'+ico("xlogo")+(label||"Xでシェア")+'</a>'+
     '<button type="button" class="sharebtn ghost" data-copy="'+esc(url)+'">'+ico("link")+'リンクをコピー</button></div>';
 }
 function copy(text){
@@ -389,6 +389,15 @@ function copy(text){
 var toastT;
 function toast(msg){var o=document.querySelector(".toast");if(o)o.remove();var t=document.createElement("div");t.className="toast";t.setAttribute("role","status");t.textContent=msg;document.body.appendChild(t);clearTimeout(toastT);toastT=setTimeout(function(){t.remove();},2200);}
 document.addEventListener("click",function(e){
+  /* On phones the X web page asks for a login, so hand the post to the OS share sheet instead: choosing X there opens the app, already signed in. */
+  var x=e.target.closest("[data-sharetext]");
+  if(x&&navigator.share&&matchMedia("(pointer:coarse)").matches){
+    e.preventDefault();
+    navigator.share({text:x.getAttribute("data-sharetext"),url:x.getAttribute("data-shareurl")}).catch(function(err){
+      if(!err||err.name!=="AbortError")location.href=x.href;
+    });
+    return;
+  }
   var b=e.target.closest("[data-copy]");if(b){e.preventDefault();copy(b.getAttribute("data-copy"));return;}
   var c=e.target.closest("[data-clear]");if(c){clearFilters();update();scrollToList();toast("すべての出来事を表示しています");}
 });
