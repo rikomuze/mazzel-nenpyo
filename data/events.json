@@ -9372,7 +9372,15 @@
         "ライブ"
       ],
       "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n東京エレクトロンホール宮城",
-      "img": []
+      "img": [
+        "images/2026-11-03-e541.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2117557994259206644"
+        }
+      ]
     },
     {
       "id": "e643",
@@ -10840,6 +10848,22 @@
       ],
       "m": [
         "RYUKI"
+      ]
+    },
+    {
+      "id": "e658",
+      "d": "2026-11-09",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "TBS「CDTVライブ！ライブ！」\n「Touch」フルサイズ披露／「名曲ライブ！ライブ！」KAIRYU・NAOYA「奏」（スキマスイッチ）披露",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2117240316981809386"
+        }
       ]
     }
   ]
