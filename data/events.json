@@ -9353,8 +9353,16 @@
       "k": [
         "ライブ"
       ],
-      "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\nとうほう・みんなの文化センター",
-      "img": []
+      "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\nとうほう・みんなの文化センター 大ホール",
+      "img": [
+        "images/2026-11-02-e540.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2117209705118634223"
+        }
+      ]
     },
     {
       "id": "e541",
@@ -9379,6 +9387,10 @@
         {
           "name": "公式",
           "url": "https://mazzel.tokyo/media/5749/"
+        },
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116003640213492135"
         }
       ],
       "m": [
@@ -9858,6 +9870,10 @@
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2114533355597508669"
+        },
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116365988866461988"
         }
       ],
       "m": [
@@ -9986,7 +10002,13 @@
         "出演"
       ],
       "t": "フジテレビ「MAZZEL DUO MISSION」\nシーズン2 第3回 FOD配信（声優・タップダンス）",
-      "img": []
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116003640213492135"
+        }
+      ]
     },
     {
       "id": "r01",
@@ -10605,6 +10627,12 @@
       "t": "MAZZEL 結成4周年",
       "img": [
         "images/2026-10-30-f002.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2115979517487616504"
+        }
       ]
     },
     {
@@ -10651,10 +10679,167 @@
         "出演"
       ],
       "t": "TBS「上田晋也のサンデーQ」\nNAOYA",
-      "img": [],
-      "src": [],
+      "img": [
+        "images/2026-11-01-e647.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116741014270644270"
+        },
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116051016332489116"
+        }
+      ],
       "m": [
         "NAOYA"
+      ]
+    },
+    {
+      "id": "e648",
+      "d": "2026-10-30",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "FM FUJI「沈黙の金曜日」\nHAYATO・EIKI 生出演（22時台）",
+      "img": [
+        "images/2026-10-30-e648.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116085649254355286"
+        }
+      ],
+      "m": [
+        "HAYATO",
+        "EIKI"
+      ]
+    },
+    {
+      "id": "e651",
+      "d": "2026-11-17",
+      "e": null,
+      "k": [
+        "雑誌"
+      ],
+      "t": "「サンデー毎日」2026年11/29号\nRAN 表紙&巻頭グラビア",
+      "img": [
+        "images/2026-11-17-e651.jpg"
+      ],
+      "src": [
+        {
+          "name": "Book Online（X）",
+          "url": "https://x.com/book__online/status/2115755756687634438"
+        }
+      ],
+      "m": [
+        "RAN"
+      ]
+    },
+    {
+      "id": "e652",
+      "d": "2026-10-31",
+      "e": null,
+      "k": [
+        "その他"
+      ],
+      "t": "映画『ワンダンス』ジャパンプレミア\nRAN 登壇（厳島伊折 役）",
+      "img": [
+        "images/2026-10-31-e652.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116393703648723455"
+        }
+      ],
+      "m": [
+        "RAN"
+      ]
+    },
+    {
+      "id": "e653",
+      "d": "2026-11-06",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "日本テレビ「バズリズム02」\n「Trap」「Touch」披露",
+      "img": [
+        "images/2026-11-06-e653.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116341490364678169"
+        }
+      ]
+    },
+    {
+      "id": "e654",
+      "d": "2026-11-02",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "ニッポン放送「大沢あかね LUCKY 7」\nRYUKI・TAKUTO 出演（11/2〜11/6）",
+      "img": [
+        "images/2026-11-02-e654.jpg",
+        "images/2026-11-02-e654-2.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116354568225464532"
+        }
+      ],
+      "m": [
+        "RYUKI",
+        "TAKUTO"
+      ]
+    },
+    {
+      "id": "e655",
+      "d": "2026-11-15",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "MTV JAPAN「MTV VMAJ 2026」放送\nMAZZEL 出演",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116357476752978202"
+        }
+      ]
+    },
+    {
+      "id": "e657",
+      "d": "2026-11-01",
+      "e": null,
+      "k": [
+        "雑誌"
+      ],
+      "t": "「装苑ONLINE」\nRYUKI 特集掲載",
+      "img": [
+        "images/2026-11-01-e657.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2116863071759339591"
+        },
+        {
+          "name": "装苑ONLINE",
+          "url": "https://soen.tokyo/fashion/visual/ryukimazzel20261101/"
+        }
+      ],
+      "m": [
+        "RYUKI"
       ]
     }
   ]
