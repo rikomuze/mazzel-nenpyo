@@ -10865,6 +10865,46 @@
           "url": "https://x.com/mazzel_official/status/2117240316981809386"
         }
       ]
+    },
+    {
+      "id": "e659",
+      "d": "2026-11-03",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "ファミマTV「10（テン）セカンズキーワード」\nRAN・JO（&TEAM）出演（映画『ワンダンス』）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2117494421516321044"
+        }
+      ],
+      "m": [
+        "RAN"
+      ]
+    },
+    {
+      "id": "e660",
+      "d": "2026-12-01",
+      "e": null,
+      "k": [
+        "雑誌"
+      ],
+      "t": "「NAILON」ISSUE 04\nRAN W表紙&24ページ大特集",
+      "img": [
+        "images/2026-12-01-e660.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2117905560175816938"
+        }
+      ],
+      "m": [
+        "RAN"
+      ]
     }
   ]
 }
