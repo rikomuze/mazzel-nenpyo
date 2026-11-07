@@ -9414,7 +9414,15 @@
         "ライブ"
       ],
       "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n新潟テルサ",
-      "img": []
+      "img": [
+        "images/2026-11-07-e542.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2119006996255162573"
+        }
+      ]
     },
     {
       "id": "e543",
@@ -10777,12 +10785,12 @@
       ],
       "t": "日本テレビ「バズリズム02」\n「Trap」「Touch」披露",
       "img": [
-        "images/2026-11-06-e653.jpg"
+        "images/2026-11-06-e653-2.jpg"
       ],
       "src": [
         {
           "name": "公式X",
-          "url": "https://x.com/mazzel_official/status/2116341490364678169"
+          "url": "https://x.com/mazzel_official/status/2118876280687124497"
         }
       ]
     },
@@ -10922,6 +10930,48 @@
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2117952131621904712"
         }
+      ]
+    },
+    {
+      "id": "e662",
+      "d": "2026-11-12",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "日本テレビ「DayDay.」\nEIKI 生出演",
+      "img": [
+        "images/2026-11-12-e662.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2118629853012558234"
+        }
+      ],
+      "m": [
+        "EIKI"
+      ]
+    },
+    {
+      "id": "e663",
+      "d": "2026-12-05",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "東海テレビ・フジテレビ系「再生のウズメ」\n最終回 EIKI カメオ出演",
+      "img": [
+        "images/2026-12-05-e663.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2118661290050871421"
+        }
+      ],
+      "m": [
+        "EIKI"
       ]
     }
   ]
