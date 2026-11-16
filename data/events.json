@@ -10951,12 +10951,12 @@
       ],
       "t": "日本テレビ「DayDay.」\nEIKI 生出演",
       "img": [
-        "images/2026-11-12-e662.jpg"
+        "images/2026-11-12-e662-2.jpg"
       ],
       "src": [
         {
           "name": "公式X",
-          "url": "https://x.com/mazzel_official/status/2118629853012558234"
+          "url": "https://x.com/mazzel_official/status/2120714736442773605"
         }
       ],
       "m": [
@@ -11023,6 +11023,48 @@
       ],
       "m": [
         "RAN",
+        "EIKI"
+      ]
+    },
+    {
+      "id": "e666",
+      "d": "2026-11-18",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "日本テレビ「上田と女が吠える夜」\nNAOYA（21:00〜）",
+      "img": [
+        "images/2026-11-18-e666.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2120509351735529723"
+        }
+      ],
+      "m": [
+        "NAOYA"
+      ]
+    },
+    {
+      "id": "e667",
+      "d": "2026-11-11",
+      "e": null,
+      "k": [
+        "リリース"
+      ],
+      "t": "BMSG NINE「My Story」配信リリース\nEIKI 参加",
+      "img": [
+        "images/2026-11-11-e667.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/BMSG_official/status/2120169626810077404"
+        }
+      ],
+      "m": [
         "EIKI"
       ]
     }
