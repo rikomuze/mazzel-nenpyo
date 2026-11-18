@@ -9041,7 +9041,7 @@
       "k": [
         "出演"
       ],
-      "t": "日本テレビ「VS.超特急」",
+      "t": "日本テレビ「VS.超特急」\nKAIRYU・RAN・SEITO 出演",
       "img": [
         "images/2026-10-20-e524.jpg"
       ],
@@ -9050,6 +9050,11 @@
           "name": "公式",
           "url": "https://mazzel.tokyo/media/5666/"
         }
+      ],
+      "m": [
+        "KAIRYU",
+        "RAN",
+        "SEITO"
       ]
     },
     {
@@ -9103,7 +9108,7 @@
       "k": [
         "出演"
       ],
-      "t": "TBS「よるのブランチ」",
+      "t": "TBS「よるのブランチ」\nKAIRYU・SEITO・RYUKI・TAKUTO 出演",
       "img": [
         "images/2026-10-22-e529.jpg"
       ],
@@ -9112,6 +9117,12 @@
           "name": "公式",
           "url": "https://mazzel.tokyo/media/5701/"
         }
+      ],
+      "m": [
+        "KAIRYU",
+        "SEITO",
+        "RYUKI",
+        "TAKUTO"
       ]
     },
     {
@@ -9251,7 +9262,7 @@
       "k": [
         "出演"
       ],
-      "t": "日本テレビ「ヒルナンデス！」",
+      "t": "日本テレビ「ヒルナンデス！」\nKAIRYU 出演",
       "img": [
         "images/2026-10-28-e534.jpg"
       ],
@@ -9264,6 +9275,9 @@
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2115314759998558645"
         }
+      ],
+      "m": [
+        "KAIRYU"
       ]
     },
     {
@@ -9450,7 +9464,15 @@
         "ライブ"
       ],
       "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n倉敷市民会館",
-      "img": []
+      "img": [
+        "images/2026-11-17-e544.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2122653479592173677"
+        }
+      ]
     },
     {
       "id": "e545",
@@ -9460,7 +9482,15 @@
         "ライブ"
       ],
       "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n広島文化学園HBGホール",
-      "img": []
+      "img": [
+        "images/2026-11-18-e545.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2123013564076347428"
+        }
+      ]
     },
     {
       "id": "e644",
@@ -9470,11 +9500,17 @@
         "雑誌"
       ],
       "t": "「Quick Japan Monologue」#01 SPECIAL EDITION版\nRAN 表紙&掲載",
-      "img": [],
+      "img": [
+        "images/2026-11-18-e644.jpg"
+      ],
       "src": [
         {
           "name": "公式",
           "url": "https://mazzel.tokyo/media/5664/"
+        },
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2122890308270907538"
         }
       ],
       "m": [
@@ -10833,11 +10869,17 @@
         "出演"
       ],
       "t": "MTV JAPAN「MTV VMAJ 2026」放送\nMAZZEL 出演",
-      "img": [],
+      "img": [
+        "images/2026-11-15-e655.jpg"
+      ],
       "src": [
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2116357476752978202"
+        },
+        {
+          "name": "MTV JAPAN公式X",
+          "url": "https://x.com/MTV_JAPAN/status/2121078598249664673"
         }
       ]
     },
@@ -11066,6 +11108,246 @@
       ],
       "m": [
         "EIKI"
+      ]
+    },
+    {
+      "id": "e668",
+      "d": "2026-09-22",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "J-WAVE「J-WAVE SPECIAL REPEZEN TYO～BMSG is...～」\nRAN 出演",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2102251494418657359"
+        }
+      ],
+      "m": [
+        "RAN"
+      ]
+    },
+    {
+      "id": "e669",
+      "d": "2026-09-26",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "J-WAVE「DIVE TO THE NEW WORLD」\nNAOYA・RAN 出演（FM802では9/27放送）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2103834387603443850"
+        }
+      ],
+      "m": [
+        "NAOYA",
+        "RAN"
+      ]
+    },
+    {
+      "id": "e670",
+      "d": "2026-09-27",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "YouTube「The SESSION:ONE」\nEp.01 TAKUTO 出演",
+      "img": [
+        "images/2026-09-27-e670.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2104043367717814337"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/s8CLnl7PD1s"
+        }
+      ],
+      "m": [
+        "TAKUTO"
+      ]
+    },
+    {
+      "id": "e671",
+      "d": "2026-10-02",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "J-WAVE「SUNNY VIBES」内「offの日、どっちっち？」\nNAOYA・RAN 出演（10月の毎週金曜／Podcast 10/2・10/16配信）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2104421255562797385"
+        }
+      ],
+      "m": [
+        "NAOYA",
+        "RAN"
+      ]
+    },
+    {
+      "id": "e672",
+      "d": "2026-10-18",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "YouTube「The SESSION:ONE」\nEp.02 RAN 出演",
+      "img": [
+        "images/2026-10-18-e672.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2111694170645762183"
+        },
+        {
+          "name": "YouTube",
+          "url": "https://youtu.be/1mN5CcPJRcs"
+        }
+      ],
+      "m": [
+        "RAN"
+      ]
+    },
+    {
+      "id": "e673",
+      "d": "2026-10-18",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "BAYFM「D's Cafe supported by ディズニー★JCBカード」\nKAIRYU・HAYATO 出演（10/18・10/25）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2109511343300915562"
+        }
+      ],
+      "m": [
+        "KAIRYU",
+        "HAYATO"
+      ]
+    },
+    {
+      "id": "e674",
+      "d": "2026-10-20",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "TOKYO FM「SCHOOL OF LOCK!」\nRAN・TAKUTO 生出演",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2112506618391007714"
+        }
+      ],
+      "m": [
+        "RAN",
+        "TAKUTO"
+      ]
+    },
+    {
+      "id": "e675",
+      "d": "2026-10-20",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "TBSラジオ「STARGLOW THE BASE」\nSEITO・TAKUTO 出演（10/20・10/22）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2105192719736078437"
+        }
+      ],
+      "m": [
+        "SEITO",
+        "TAKUTO"
+      ]
+    },
+    {
+      "id": "e676",
+      "d": "2026-10-21",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "TOKYO FM「THE TRAD」\nTAKUTO・HAYATO 生出演",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2112740698239971724"
+        }
+      ],
+      "m": [
+        "TAKUTO",
+        "HAYATO"
+      ]
+    },
+    {
+      "id": "e677",
+      "d": "2026-11-12",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "フジテレビ「有野屋書店 2号店」\n第1回 地上波放送（26:15〜）／EIKI 副店長／ゲスト クロちゃん",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2119635603818254843"
+        }
+      ],
+      "m": [
+        "EIKI"
+      ]
+    },
+    {
+      "id": "e678",
+      "d": "2026-11-21",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "日本テレビ「D.U.N.K. in the City」\n14:30〜15:00",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2122243094892667067"
+        }
+      ]
+    },
+    {
+      "id": "e679",
+      "d": "2026-12-16",
+      "e": null,
+      "k": [
+        "雑誌"
+      ],
+      "t": "「anan」2524号増刊 スペシャルエディション\nMAZZEL 初表紙",
+      "img": [],
+      "src": [
+        {
+          "name": "anan公式X",
+          "url": "https://x.com/anan_mag/status/2118252017730671041"
+        }
       ]
     }
   ]
