@@ -9924,7 +9924,7 @@
       ],
       "t": "FOD「有野屋書店 2号店」\nEIKI（副店長・レギュラー） / 第2回ゲスト RYUKI / 12:00配信開始",
       "img": [
-        "images/2026-10-31-e575.jpg"
+        "images/2026-10-31-e575-2.jpg"
       ],
       "src": [
         {
@@ -9934,6 +9934,10 @@
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2116365988866461988"
+        },
+        {
+          "name": "FOD（X）",
+          "url": "https://x.com/fujitvplus/status/2116365078136308175"
         }
       ],
       "m": [
@@ -9972,7 +9976,9 @@
         "記録"
       ],
       "t": "Billboard JAPAN “JAPAN Hot 100” 1位\n「Touch」",
-      "img": [],
+      "img": [
+        "images/2026-10-28-e579.jpg"
+      ],
       "src": [
         {
           "name": "公式X",
@@ -9981,6 +9987,10 @@
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2115694674849771804"
+        },
+        {
+          "name": "Billboard JAPAN（X）",
+          "url": "https://x.com/Billboard_JAPAN/status/2115289201747042614"
         }
       ]
     },
@@ -10765,12 +10775,16 @@
       ],
       "t": "FM FUJI「沈黙の金曜日」\nHAYATO・EIKI 生出演（22時台）",
       "img": [
-        "images/2026-10-30-e648.jpg"
+        "images/2026-10-30-e648-2.jpg"
       ],
       "src": [
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2116085649254355286"
+        },
+        {
+          "name": "FM FUJI 沈黙の金曜日（X）",
+          "url": "https://x.com/fmfujichinmoku/status/2116160110129283101"
         }
       ],
       "m": [
@@ -10787,9 +10801,14 @@
       ],
       "t": "「サンデー毎日」2026年11/29号\nRAN 表紙&巻頭グラビア",
       "img": [
-        "images/2026-11-17-e651.jpg"
+        "images/2026-11-17-e651-2.jpg",
+        "images/2026-11-17-e651-3.jpg"
       ],
       "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2122527785461981594"
+        },
         {
           "name": "Book Online（X）",
           "url": "https://x.com/book__online/status/2115755756687634438"
@@ -10847,13 +10866,16 @@
       ],
       "t": "ニッポン放送「大沢あかね LUCKY 7」\nRYUKI・TAKUTO 出演（11/2〜11/6）",
       "img": [
-        "images/2026-11-02-e654.jpg",
-        "images/2026-11-02-e654-2.jpg"
+        "images/2026-11-02-e654-3.jpg"
       ],
       "src": [
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2116354568225464532"
+        },
+        {
+          "name": "大沢あかね LUCKY 7（X）",
+          "url": "https://x.com/akanelucky7/status/2117089321794896155"
         }
       ],
       "m": [
@@ -11077,12 +11099,16 @@
       ],
       "t": "日本テレビ「上田と女が吠える夜」\nNAOYA（21:00〜）",
       "img": [
-        "images/2026-11-18-e666.jpg"
+        "images/2026-11-18-e666-2.jpg"
       ],
       "src": [
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2120509351735529723"
+        },
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2123043793431839203"
         }
       ],
       "m": [
@@ -11307,11 +11333,17 @@
         "出演"
       ],
       "t": "フジテレビ「有野屋書店 2号店」\n第1回 地上波放送（26:15〜）／EIKI 副店長／ゲスト クロちゃん",
-      "img": [],
+      "img": [
+        "images/2026-11-12-e677.jpg"
+      ],
       "src": [
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2119635603818254843"
+        },
+        {
+          "name": "FOD（X）",
+          "url": "https://x.com/fujitvplus/status/2120935945981812751"
         }
       ],
       "m": [
