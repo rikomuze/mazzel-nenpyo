@@ -9020,7 +9020,7 @@
       "k": [
         "出演"
       ],
-      "t": "テレビ朝日「ラブ!!Jリーグ」",
+      "t": "テレビ朝日「ラブ!!Jリーグ」\nKAIRYU 出演",
       "img": [
         "images/2026-10-17-e526.jpg"
       ],
@@ -9064,7 +9064,7 @@
       "k": [
         "出演"
       ],
-      "t": "NHK「＃バズ英語〜SNSで世界をみよう〜」",
+      "t": "NHK「＃バズ英語〜SNSで世界をみよう〜」\nNAOYA・HAYATO 出演",
       "img": [
         "images/2026-10-20-e527.jpg"
       ],
@@ -9086,7 +9086,7 @@
       "k": [
         "出演"
       ],
-      "t": "日本テレビ「ヒルナンデス！」",
+      "t": "日本テレビ「ヒルナンデス！」\nNAOYA・RAN 出演",
       "img": [
         "images/2026-10-20-e530.jpg"
       ],
@@ -9166,7 +9166,7 @@
       "k": [
         "出演"
       ],
-      "t": "NHK Eテレ / NHK ONE「沼にハマってきいてみた」",
+      "t": "NHK Eテレ / NHK ONE「沼にハマってきいてみた」\nRYUKI・EIKI 出演",
       "img": [
         "images/2026-10-24-e535.jpg"
       ],
@@ -9212,7 +9212,7 @@
       "k": [
         "出演"
       ],
-      "t": "日本テレビ「有吉ゼミ」",
+      "t": "日本テレビ「有吉ゼミ」\nRYUKI・TAKUTO 出演",
       "img": [
         "images/2026-10-26-e531.jpg",
         "images/2026-10-26-e531-2.jpg",
@@ -9287,7 +9287,7 @@
       "k": [
         "出演"
       ],
-      "t": "日本テレビ「DayDay.」",
+      "t": "日本テレビ「DayDay.」\nEIKI 出演",
       "img": [
         "images/2026-10-28-e536.jpg"
       ],
@@ -11313,11 +11313,17 @@
         "出演"
       ],
       "t": "TOKYO FM「THE TRAD」\nTAKUTO・HAYATO 生出演",
-      "img": [],
+      "img": [
+        "images/2026-10-21-e676.jpg"
+      ],
       "src": [
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2112740698239971724"
+        },
+        {
+          "name": "THE TRAD公式X",
+          "url": "https://x.com/THETRAD_TFM/status/2112849589284036780"
         }
       ],
       "m": [
@@ -11379,6 +11385,26 @@
         {
           "name": "anan公式X",
           "url": "https://x.com/anan_mag/status/2118252017730671041"
+        }
+      ]
+    },
+    {
+      "id": "e680",
+      "d": "2026-11-28",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "日本テレビ「ベストアーティスト2026」\n5時間生放送（16:00〜17:00／19:00〜22:54）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2123703079946314236"
+        },
+        {
+          "name": "番組公式X",
+          "url": "https://x.com/musicday_ntv/status/2123702903605219837"
         }
       ]
     }
