@@ -11364,11 +11364,17 @@
         "出演"
       ],
       "t": "日本テレビ「D.U.N.K. in the City」\n14:30〜15:00",
-      "img": [],
+      "img": [
+        "images/2026-11-21-e678.jpg"
+      ],
       "src": [
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2122243094892667067"
+        },
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2124021683518669273"
         }
       ]
     },
@@ -11406,6 +11412,27 @@
           "name": "番組公式X",
           "url": "https://x.com/musicday_ntv/status/2123702903605219837"
         }
+      ]
+    },
+    {
+      "id": "e681",
+      "d": "2026-11-20",
+      "e": null,
+      "k": [
+        "その他"
+      ],
+      "t": "映画『ワンダンス』学生の夢を応援イベント\nRAN サプライズ登壇（厳島伊折 役）／共立女子大学",
+      "img": [
+        "images/2026-11-20-e681.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2123744806715498545"
+        }
+      ],
+      "m": [
+        "RAN"
       ]
     }
   ]
