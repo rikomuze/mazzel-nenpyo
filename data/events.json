@@ -11450,6 +11450,68 @@
           "url": "https://x.com/mazzel_official/status/2124148328178778608"
         }
       ]
+    },
+    {
+      "id": "e683",
+      "d": "2026-11-24",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "NHK広島「ひろしま コイらじ」\nNAOYA・RAN 出演（17:05〜17:55）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2124699098553176132"
+        }
+      ],
+      "m": [
+        "NAOYA",
+        "RAN"
+      ]
+    },
+    {
+      "id": "e684",
+      "d": "2026-11-25",
+      "e": null,
+      "k": [
+        "出演"
+      ],
+      "t": "日本テレビ「ヒルナンデス！」\nKAIRYU 出演",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2124699098553176132"
+        }
+      ],
+      "m": [
+        "KAIRYU"
+      ]
+    },
+    {
+      "id": "e685",
+      "d": "2026-11-28",
+      "e": null,
+      "k": [
+        "その他"
+      ],
+      "t": "映画『ワンダンス』公開記念舞台挨拶\nRAN 登壇（厳島伊折 役）",
+      "img": [],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2124699098553176132"
+        },
+        {
+          "name": "映画『ワンダンス』公式X",
+          "url": "https://x.com/wandance_movie/status/2123348053268541471"
+        }
+      ],
+      "m": [
+        "RAN"
+      ]
     }
   ]
 }
