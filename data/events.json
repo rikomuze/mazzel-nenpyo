@@ -9551,7 +9551,15 @@
         "ライブ"
       ],
       "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n神戸国際会館 こくさいホール",
-      "img": []
+      "img": [
+        "images/2026-11-25-e547.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2125559827112120585"
+        }
+      ]
     },
     {
       "id": "e548",
@@ -9561,7 +9569,15 @@
         "ライブ"
       ],
       "t": "MAZZEL 2nd Fan Meeting -Play at the MUZEUM Vol.2-\n大阪国際会議場 メインホール",
-      "img": []
+      "img": [
+        "images/2026-11-26-e548.jpg"
+      ],
+      "src": [
+        {
+          "name": "公式X",
+          "url": "https://x.com/mazzel_official/status/2125908852277416030"
+        }
+      ]
     },
     {
       "id": "e645",
@@ -11534,6 +11550,22 @@
         {
           "name": "公式X",
           "url": "https://x.com/mazzel_official/status/2125171246635905502"
+        }
+      ]
+    },
+    {
+      "id": "e687",
+      "d": "2027-01-13",
+      "e": null,
+      "k": [
+        "リリース"
+      ],
+      "t": "Blu-ray/DVD『MAZZEL 1st Arena Tour 2026 “Shall we hit the Banquet?”』\nリリース／2026年6月7日 国立代々木競技場 第一体育館 最終公演を収録",
+      "img": [],
+      "src": [
+        {
+          "name": "公式",
+          "url": "https://mazzel.tokyo/news/5785/"
         }
       ]
     }
